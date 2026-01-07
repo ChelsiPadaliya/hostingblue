@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <>
       {/* pricing-section */}
-      <section className="pricing-section pt-100 pb-70">
+      <section className="pricing-section -mt-[100px] pb-70">
         <div className="container">
           <div className="section-title section-title-two">
             <h2>Price &amp; plans</h2>

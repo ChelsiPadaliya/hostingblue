@@ -44,7 +44,23 @@ const Page: React.FC = () => {
       try {
         const [plansResponse, featuresResponse] = await Promise.all([
           fetch('/api/hosting-plans'),
-          fetch('/api/hosting-features')
+          fetch('https://neapi.hanaplatform.com/api/dynamic/getdata/public', {
+            method: 'POST',
+            headers: {
+              'x-api-key': 'dhtr348768uhjkh544fg',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              "appName": "app6121010948209",
+              "moduleName": "hostingfeature",
+              "query": {},
+              "projection": {},
+              "limit": 0,
+              "skip": 0,
+              "order": "descending",
+              "sortBy": "_id"
+            })
+          })
         ]);
         
         const plansData = await plansResponse.json();
@@ -131,12 +147,13 @@ const Page: React.FC = () => {
         </div>
       </section>
 
-      {features.length > 0 && (
-        <section className="features-section py-5">
-          <div className="container">
-            <div className="section-title section-title-two">
-              <h2>Linux Features</h2>
-            </div>
+      <section className="features-section py-5">
+        <div className="container">
+          <div className="section-title section-title-two">
+            <h2>Linux Features</h2>
+            <p>Discover the powerful features included with our Linux hosting</p>
+          </div>
+          {features.length > 0 ? (
             <div className="row">
               {features.map((feature) => (
                 <div key={feature._id} className="col-md-4 mb-4">
@@ -150,11 +167,14 @@ const Page: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-      )}
-
-      <Features />
+          ) : (
+            <div className="text-center py-5">
+              <h3>Features Not Available</h3>
+              <p>Linux hosting features are currently not available. Please check back later.</p>
+            </div>
+          )}
+        </div>
+      </section>
     </>
   );
 };

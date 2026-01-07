@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Features from "../home/features";
 
 interface PlanAttribute {
   attribute: string;
@@ -15,6 +14,7 @@ interface HostingPlan {
   sectionData: {
     hostingplan: {
       planname: string;
+      description?: string;
       type: string[];
       plantable: PlanAttribute[];
       order: string;
@@ -43,27 +43,71 @@ const Page = () => {
     const fetchData = async () => {
       try {
         const [plansResponse, featuresResponse] = await Promise.all([
-          fetch('/api/hosting-plans'),
-          fetch('/api/hosting-features?tag=H Cloud')
+          fetch("https://neapi.hanaplatform.com/api/dynamic/getdata/public", {
+            method: "POST",
+            headers: {
+              "x-api-key": "dhtr348768uhjkh544fg",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              appName: "app6121010948209",
+              moduleName: "hostingplan",
+              query: {},
+              projection: {},
+              limit: 0,
+              skip: 0,
+              order: "descending",
+              sortBy: "_id",
+            }),
+          }),
+          fetch("https://neapi.hanaplatform.com/api/dynamic/getdata/public", {
+            method: "POST",
+            headers: {
+              "x-api-key": "dhtr348768uhjkh544fg",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              appName: "app6121010948209",
+              moduleName: "hostingfeature",
+              query: {},
+              projection: {},
+              limit: 0,
+              skip: 0,
+              order: "descending",
+              sortBy: "_id",
+            }),
+          }),
         ]);
-        
+
         const plansData = await plansResponse.json();
         const featuresData = await featuresResponse.json();
-        
+
         if (plansData.success) {
-          const cloudPlans = plansData.data.filter((plan: HostingPlan) =>
-            plan.sectionData.hostingplan.type.some(type => 
-              type.toLowerCase().trim() === 'cloud'
+          const cloudPlans = plansData.data
+            .filter((plan: HostingPlan) =>
+              plan.sectionData.hostingplan.type.some(
+                (type) => type.toLowerCase().trim() === "cloud"
+              )
             )
-          );
+            .sort(
+              (a: HostingPlan, b: HostingPlan) =>
+                parseInt(a.sectionData.hostingplan.order) -
+                parseInt(b.sectionData.hostingplan.order)
+            );
           setPlans(cloudPlans);
         }
-        
+
         if (featuresData.success) {
-          setFeatures(featuresData.data);
+          const cloudFeatures = featuresData.data.filter(
+            (feature: HostingFeature) =>
+              feature.sectionData.hostingfeature.tags.some((tag) =>
+                tag.toLowerCase().includes("cloud")
+              )
+          );
+          setFeatures(cloudFeatures);
         }
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
@@ -73,66 +117,167 @@ const Page = () => {
   }, []);
 
   if (loading) {
-    return <div className="container py-5">Loading...</div>;
+    return (
+      <>
+        <section className="pricing-section -mt-[100px] pb-70">
+          <div className="container">
+            <div className="section-title section-title-two">
+              <div className="h-8 bg-gray-200 rounded w-64 mx-auto mb-4 animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded w-96 mx-auto animate-pulse"></div>
+            </div>
+            <div className="row">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="col-sm-12 col-md-6 col-lg-3">
+                  <div className="pricing-item pricing-item-two">
+                    <div className="pricing-secondary-header">
+                      <div className="pricing-header-title">
+                        <div className="h-6 bg-gray-200 rounded w-32 mb-2 animate-pulse"></div>
+                        <div className="h-4 bg-gray-200 rounded w-40 animate-pulse"></div>
+                      </div>
+                      <div className="pricing-item-amount">
+                        <div className="h-4 bg-gray-200 rounded w-20 mb-2 animate-pulse"></div>
+                        <div className="h-8 bg-gray-200 rounded w-24 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <div className="pricing-item-body">
+                      <ul className="pricing-body-list pricing-body-list-two">
+                        {[...Array(5)].map((_, j) => (
+                          <li key={j}>
+                            <div className="h-4 bg-gray-200 rounded w-full animate-pulse"></div>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="h-10 bg-gray-200 rounded w-full mt-4 animate-pulse"></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="feature-section bg-off-white-gradient pt-40 pb-70">
+          <div className="container">
+            <div className="section-title section-title-two">
+              <div className="h-4 bg-gray-200 rounded w-20 mx-auto mb-2 animate-pulse"></div>
+              <div className="h-8 bg-gray-200 rounded w-64 mx-auto mb-4 animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded w-80 mx-auto animate-pulse"></div>
+            </div>
+            <div className="row">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="col-sm-12 col-lg-6">
+                  <div className="feature-item fluid-height">
+                    <div className="feature-item-inner full-height bg-white">
+                      <div className="feature-item-thumb feature-item-thumb-round bg-off-hard-gradient">
+                        <div className="w-15 h-15 bg-gray-200 rounded animate-pulse"></div>
+                      </div>
+                      <div className="feature-item-content">
+                        <div className="h-6 bg-gray-200 rounded w-48 mb-3 animate-pulse"></div>
+                        <div className="h-4 bg-gray-200 rounded w-full mb-2 animate-pulse"></div>
+                        <div className="h-4 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </>
+    );
   }
 
   return (
     <>
-      <section className="pricing-section pb-70">
+      <section className="pricing-section -mt-[100px] pb-70">
         <div className="container">
           <div className="section-title section-title-two">
             <h2>Cloud Hosting Plans</h2>
             <p>
-              Choose the perfect cloud hosting plan for your needs with scalable resources and reliable performance.
+              Choose the perfect cloud hosting plan for your needs with scalable
+              resources and reliable performance.
             </p>
           </div>
 
-          <div className="row">
-            {plans.map((plan) => (
-              <div key={plan._id} className="col-sm-12 col-md-6 col-lg-3">
-                <div className="pricing-item pricing-item-two">
-                  <div className="pricing-secondary-header">
-                    <div className="pricing-header-title">
-                      <h3 className="pricing-header-title-text">
-                        {plan.sectionData.hostingplan.planname}
-                      </h3>
-                      <p>Perfect for your cloud hosting needs</p>
+          {plans.length > 0 ? (
+            <div className="row">
+              {plans.map((plan) => (
+                <div key={plan._id} className="col-sm-12 col-md-6 col-lg-3">
+                  <div className="pricing-item pricing-item-two">
+                    <div className="pricing-secondary-header">
+                      <div className="pricing-header-title">
+                        <h3 className="pricing-header-title-text">
+                          {plan.sectionData.hostingplan.planname}
+                        </h3>
+                        <p>{plan.sectionData.hostingplan.description}</p>
+                      </div>
+                      <div className="pricing-item-amount">
+                        <p>Starting at</p>
+                        <h4 className="pricing-item-amount-number">
+                          {(() => {
+                            const monthlyAttr =
+                              plan.sectionData.hostingplan.plantable.find(
+                                (attr) =>
+                                  attr.attribute.toLowerCase() === "monthly"
+                              );
+                            return monthlyAttr ? (
+                              <>
+                                <small>{monthlyAttr.unit}</small>
+                                {monthlyAttr.value}
+                                <span>/Month</span>
+                              </>
+                            ) : (
+                              <>
+                                <small>₹</small>0<span>/Month</span>
+                              </>
+                            );
+                          })()}
+                        </h4>
+                      </div>
                     </div>
-                    <div className="pricing-item-amount">
-                      <p>Starting at</p>
-                      <h4 className="pricing-item-amount-number">
-                        <small>$</small>9.99<span>/Month</span>
-                      </h4>
+
+                    <div className="pricing-item-body">
+                      {plan.sectionData.hostingplan.plantable.length > 0 ? (
+                        <ul className="pricing-body-list pricing-body-list-two">
+                          {plan.sectionData.hostingplan.plantable
+                            .filter(
+                              (attr) =>
+                                attr.attribute.toLowerCase() !== "monthly"
+                            )
+                            .map((attr, index) => (
+                              <li key={index}>
+                                {attr.value} {attr.unit} {attr.attribute}
+                              </li>
+                            ))}
+                        </ul>
+                      ) : (
+                        <p className="text-center">No features available</p>
+                      )}
+
+                      <a href="/cart" className="btn btn-gradient">
+                        Buy Now
+                      </a>
                     </div>
-                  </div>
-
-                  <div className="pricing-item-body">
-                    <ul className="pricing-body-list pricing-body-list-two">
-                      {plan.sectionData.hostingplan.plantable.map((attr, index) => (
-                        <li key={index}>
-                          {attr.attribute} <span>({attr.value} {attr.unit})</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <a href="/cart" className="btn btn-gradient">
-                      Buy Now
-                    </a>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-5">
+              <h5>No Cloud Hosting Plans Available</h5>
+            </div>
+          )}
         </div>
       </section>
-      
-      {features.length > 0 && (
+
+      {features.length > 0 ? (
         <section className="feature-section bg-off-white-gradient pt-40 pb-70">
           <div className="container">
             <div className="section-title section-title-two">
               <small>Features</small>
               <h2>Cloud Hosting Features</h2>
-              <p>Discover the powerful features included with your cloud hosting</p>
+              <p>
+                Discover the powerful features included with your cloud hosting
+              </p>
             </div>
 
             <div className="row">
@@ -149,13 +294,33 @@ const Page = () => {
                             height={60}
                           />
                         ) : (
-                          <div style={{ width: 60, height: 60, backgroundColor: '#f0f0f0' }}></div>
+                          <div
+                            style={{
+                              width: 60,
+                              height: 60,
+                              backgroundColor: "#f0f0f0",
+                            }}
+                          ></div>
                         )}
                       </div>
 
                       <div className="feature-item-content">
                         <h3>{feature.sectionData.hostingfeature.title}</h3>
                         <p>{feature.sectionData.hostingfeature.description}</p>
+                        {feature.sectionData.hostingfeature.tags.length > 0 && (
+                          <div className="feature-tags">
+                            {feature.sectionData.hostingfeature.tags.map(
+                              (tag, index) => (
+                                <span
+                                  key={index}
+                                  className="badge badge-secondary me-1"
+                                >
+                                  {tag}
+                                </span>
+                              )
+                            )}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -164,9 +329,22 @@ const Page = () => {
             </div>
           </div>
         </section>
+      ) : (
+        <section className="feature-section bg-off-white-gradient pt-40 pb-70">
+          <div className="container">
+            <div className="section-title section-title-two">
+              <small>Features</small>
+              <h2>Cloud Hosting Features</h2>
+              <p>
+                Discover the powerful features included with your cloud hosting
+              </p>
+            </div>
+            <div className="text-center">
+              <h5>No Cloud Hosting Features Available</h5>
+            </div>
+          </div>
+        </section>
       )}
-      
-      <Features/>
     </>
   );
 };

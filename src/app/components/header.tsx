@@ -307,6 +307,11 @@ const Header = () => {
                             </Link>
                           </li>
                           <li className="nav-item">
+                            <Link href="/linux-hosting" className={`nav-link ${isActive('/linux-hosting') ? 'active' : ''}`}>
+                              Linux Hosting
+                            </Link>
+                          </li>
+                          <li className="nav-item">
                             <Link href="/domain-name" className={`nav-link ${isActive('/domain-name') ? 'active' : ''}`}>
                               Domain Name
                             </Link>
