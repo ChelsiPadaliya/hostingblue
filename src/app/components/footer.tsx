@@ -77,21 +77,22 @@ const Footer = () => {
                         </div>
                         <ul className="footer-details footer-list">
                           <li>
-                            <Link href="/shared-hosting">Shared Hosting</Link>
-                          </li>
-                          <li>
-                            <Link href="/wordpress-hosting">
-                              WordPress Hosting
+                            <Link href="/hosting?category=linux-shared">
+                              Linux Shared Hosting
                             </Link>
                           </li>
                           <li>
-                            <Link href="/cloud-hosting">Cloud Hosting</Link>
+                            <Link href="/hosting?category=windows-shared">
+                              Windows Shared Hosting
+                            </Link>
                           </li>
                           <li>
-                            <Link href="/vps-hosting">VPS Hosting</Link>
+                            <Link href="/hosting?category=cloud">
+                              Cloud Hosting
+                            </Link>
                           </li>
                           <li>
-                            <Link href="/dedicated-hosting">
+                            <Link href="/hosting?category=dedicated">
                               Dedicated Hosting
                             </Link>
                           </li>
@@ -105,19 +106,18 @@ const Footer = () => {
                         </div>
                         <ul className="footer-details footer-list">
                           <li>
-                            <Link href="/about-us">About Us</Link>
+                            <Link href="/about">About Us</Link>
                           </li>
                           <li>
-                            <Link href="/contact-us">Contact Us</Link>
+                            <Link href="/contact">Contact Us</Link>
                           </li>
                           <li>
-                            <Link href="/pricing">Pricing</Link>
+                            <Link href="/terms-conditions">
+                              Terms & Conditions
+                            </Link>
                           </li>
                           <li>
-                            <Link href="/news-default">News</Link>
-                          </li>
-                          <li>
-                            <Link href="/affiliate">Affiliate</Link>
+                            <Link href="/privacy-policy">Privacy Policy</Link>
                           </li>
                         </ul>
                       </div>
@@ -125,25 +125,20 @@ const Footer = () => {
                     <div className="col-sm-6 col-md-4 col-lg-4">
                       <div className="footer-content-list footer-content-item">
                         <div className="footer-content-title">
-                          <h3>Solutions</h3>
+                          <h3>Support</h3>
                         </div>
                         <ul className="footer-details footer-list">
                           <li>
-                            <Link href="/terms-conditions">
-                              Terms &amp; Conditions
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/privacy-policy">Privacy Policy</Link>
-                          </li>
-                          <li>
-                            <Link href="/authentication">Authentication</Link>
-                          </li>
-                          <li>
-                            <Link href="/pricing">Pricing</Link>
-                          </li>
-                          <li>
                             <Link href="/faqs">FAQ's</Link>
+                          </li>
+                          <li>
+                            <Link href="#">Help Center</Link>
+                          </li>
+                          <li>
+                            <Link href="#">Live Chat</Link>
+                          </li>
+                          <li>
+                            <Link href="tel:+919909005055">Call Support</Link>
                           </li>
                         </ul>
                       </div>
@@ -204,11 +199,7 @@ const Footer = () => {
                   {/* info */}
                   <div className="footer-lower-text text-lg-end">
                     <p className="footer-text-copy">
-                      © Copyright 2013 - HostingBLUE India - Inc All Rights
-                      Reserved.
-                      {/* <a href="https://hibootstrap.com/" target="_blank">
-                         HiBootstrap
-                      </a> */}
+                      © Copyright 2013 - HostingBLUE India - Inc All Rights Reserved
                     </p>
                     <p className="footer-text-gen">
                       Terms &amp; Conditions May Apply.{" "}

@@ -50,7 +50,31 @@ const Features = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <section className="feature-section bg-off-white-gradient pt-40 pb-70">
+        <div className="container">
+          <div className="section-title section-title-two">
+            <div className="h-4 bg-gray-200 rounded w-24 mx-auto mb-4 animate-pulse"></div>
+            <div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse"></div>
+            <div className="h-4 bg-gray-200 rounded w-96 mx-auto animate-pulse"></div>
+          </div>
+          <div className="row">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="col-sm-12 col-lg-6">
+                <div className="feature-item fluid-height">
+                  <div className="feature-item-inner full-height bg-white">
+                    <div className="h-16 w-16 bg-gray-200 rounded-full mb-4 animate-pulse"></div>
+                    <div className="h-6 bg-gray-200 rounded w-3/4 mb-3 animate-pulse"></div>
+                    <div className="h-4 bg-gray-200 rounded w-full mb-2 animate-pulse"></div>
+                    <div className="h-4 bg-gray-200 rounded w-2/3 animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
   }
 
   return (

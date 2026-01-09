@@ -5,14 +5,14 @@ const Choose = () => {
     smallTitle: "Why best",
     mainTitle: "Why choose us",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis",
+      "Hostingblue offers affordable, reliable, and secure web hosting solutions with high uptime, strong performance, expert support, and scalable plans.",
   };
 
   const items = [
     {
       id: 1,
       title: "Dedicated support",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elt ttotam rem aperiam dolore magnam luptatem.",
+      text: "Our expert support team provides fast, reliable, and professional assistance for technical issues, account management, and service-related queries.",
       image: "/assets/images/choose-2-1.png",
       alt: "Dedicated support",
       cardClass: "box-card-primary",
@@ -20,7 +20,7 @@ const Choose = () => {
     {
       id: 2,
       title: "Data security",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elt ttotam rem aperiam dolore magnam luptatem.",
+      text: "We use advanced security measures to protect your data, ensuring safety, reliability, and continuous protection against unauthorized access and threats.",
       image: "/assets/images/choose-2-2.png",
       alt: "Data security",
       cardClass: "box-card-secondary",
@@ -28,7 +28,7 @@ const Choose = () => {
     {
       id: 3,
       title: "Data migration",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elt ttotam rem aperiam dolore magnam luptatem.",
+      text: "We provide secure and seamless data migration services, ensuring safe transfer of websites, files, emails, and databases with minimal downtime.",
       image: "/assets/images/choose-2-3.png",
       alt: "Data migration",
       cardClass: "box-card-warning",
