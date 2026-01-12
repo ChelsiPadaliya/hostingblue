@@ -4941,7 +4941,7 @@ button:focus, button:active {
 }
 
 .wallet-image img {
-  width: 100%;
+  width: 150px;
 }
 
 .digital-wallet-content .sub-section-title {

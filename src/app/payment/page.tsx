@@ -24,12 +24,14 @@ const page = () => {
                     <p> Paypal Id : Conscor@gmail.com</p>
                   </div>
                 </div>
-              </div>    
+              </div>
               <div className="col-12 col-md-6 pb-30">
                 <div className="wallet-box">
                   <hr />
                   <div className="sub-section-title">
-                    <h5 className="text-left">RAIDLAYER WEBHOST PRIVATE LIMITED</h5>
+                    <h5 className="text-left">
+                      RAIDLAYER WEBHOST PRIVATE LIMITED
+                    </h5>
                   </div>
                   <div className="wallet-content">
                     <p>ACCOUNT NO : 034505500445 (Current Account)</p>
@@ -52,6 +54,31 @@ const page = () => {
                     <p>PAN No : ABUPD6101E</p>
                     <p>State bank of india</p>
                   </div>
+                </div>
+              </div>
+              <div className="col-sm-12 col-md-6 pb-30">
+                <div className="wallet-box">
+                  <div className="wallet-image">
+                    <img src="assets/images/paytm-logo.png" alt="paytm" />
+                  </div>
+                  <hr />
+                  <div className="wallet-content">
+                    <p>To pay in your PAYTM app</p>
+                    <p>Enter Pay Number : +91 9909005055</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-12 col-md-6 pb-30">
+                <div className="wallet-box">
+                  <div className="wallet-image">
+                    <a href="https://www.paypal.me/hostingblue" target="_blank">
+                      <img
+                        src="assets/images/paypal-hostingblue.png"
+                        alt="paypal"
+                      />
+                    </a>
+                  </div>
+                  <hr />
                 </div>
               </div>
             </div>
