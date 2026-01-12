@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 interface PlanAttribute {
@@ -60,7 +60,7 @@ const HOSTING_CATEGORIES = [
   { value: "vps", label: "VPS Hosting", types: ["VPS"] },
 ];
 
-const HostingPage = () => {
+const HostingPageContent = () => {
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
   const [selectedCategory, setSelectedCategory] = useState("cloud");
@@ -349,6 +349,14 @@ const HostingPage = () => {
         </section>
       )}
     </>
+  );
+};
+
+const HostingPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HostingPageContent />
+    </Suspense>
   );
 };
 

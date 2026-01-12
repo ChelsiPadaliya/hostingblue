@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 interface PlanAttribute {
@@ -47,7 +47,7 @@ const STORAGE_CATEGORIES = [
   },
 ];
 
-const StoragePage = () => {
+const StoragePageContent = () => {
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
   const [selectedCategory, setSelectedCategory] = useState("cloud-storage");
@@ -336,6 +336,14 @@ const StoragePage = () => {
         </section>
       )}
     </>
+  );
+};
+
+const StoragePage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <StoragePageContent />
+    </Suspense>
   );
 };
 

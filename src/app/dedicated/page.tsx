@@ -272,7 +272,7 @@ const DedicatedPageContent = () => {
         </div>
       </section>
 
-      {filteredFeatures.length > 0 ? (
+      {filteredFeatures.length > 0 && (
         <section className="feature-section bg-off-white-gradient pt-40 pb-70">
           <div className="container">
             <div className="section-title section-title-two">
@@ -315,21 +315,6 @@ const DedicatedPageContent = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-      ) : (
-        <section className="feature-section bg-off-white-gradient pt-40 pb-70">
-          <div className="container">
-            <div className="section-title section-title-two">
-              <small>Features</small>
-              <h2>Dedicated Server Features</h2>
-              <p>
-                Discover the powerful features included with your dedicated server plan
-              </p>
-            </div>
-            <div className="text-center">
-              <h5>No dedicated server features available for selected types</h5>
             </div>
           </div>
         </section>

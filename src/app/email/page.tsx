@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 interface PlanAttribute {
@@ -57,7 +57,7 @@ const EMAIL_CATEGORIES = [
   },
 ];
 
-const EmailPage = () => {
+const EmailPageContent = () => {
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
   const [selectedCategory, setSelectedCategory] = useState("webmail");
@@ -346,6 +346,14 @@ const EmailPage = () => {
         </section>
       )}
     </>
+  );
+};
+
+const EmailPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EmailPageContent />
+    </Suspense>
   );
 };
 
