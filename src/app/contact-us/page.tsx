@@ -4,6 +4,8 @@ import Link from "next/link";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,6 +16,7 @@ const Page = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
     const name = formData.get("name") as string;
@@ -22,12 +25,11 @@ const Page = () => {
     const subject = formData.get("msg_subject") as string;
     const message = formData.get("message") as string;
 
-    const whatsappMessage = `*New Contact Form Submission*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Subject:* ${subject}\n*Message:* ${message}`;
-
-    const whatsappUrl = `https://wa.me/917600018145?text=${encodeURIComponent(
-      whatsappMessage
-    )}`;
-    window.open(whatsappUrl, "_blank");
+    const mailtoLink = `mailto:live@hostingblue.in?subject=${encodeURIComponent(`Contact Form: ${subject}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`)}`;
+    
+    window.location.href = mailtoLink;
+    setSubmitMessage("Your email application has opened with the message. Please click Send in your email client to complete.");
+    setSubmitting(false);
   };
 
   if (loading) {
@@ -339,10 +341,10 @@ const Page = () => {
                           </div>
                         </div>
                         <div className="col-sm-12 col-md-12 col-lg-12">
-                          <button className="btn btn-gradient" type="submit">
-                            Send Message
+                          <button className="btn btn-gradient" type="submit" disabled={submitting}>
+                            {submitting ? "Sending..." : "Send Message"}
                           </button>
-                          <div id="msgSubmit" />
+                          <div id="msgSubmit">{submitMessage}</div>
                           <div className="clearfix" />
                         </div>
                       </div>

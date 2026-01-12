@@ -9,8 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@types/nodemailer": "^7.0.5",
     "jquery": "^3.7.1",
     "next": "16.1.1",
+    "nodemailer": "^7.0.12",
     "owl.carousel": "^2.3.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",

@@ -21,7 +21,7 @@ const FAQsPage = () => {
   if (loading) {
     return (
       <>
-        <section className="faq-section pt-100 pb-70 blue-gradient-with-opacity">
+        <section className="faq-section pt-100 -mt-[150px] pb-70 blue-gradient-with-opacity">
           <div className="container">
             <div className="h-8 bg-gray-200 rounded w-80 mx-auto mb-8 animate-pulse"></div>
             <div className="row align-items-center">
@@ -67,7 +67,7 @@ const FAQsPage = () => {
   return (
     <>
       {/* faq-section */}
-      <section className="faq-section pt-100 pb-70 blue-gradient-with-opacity">
+      <section className="faq-section pt-100 -mt-[150px] pb-70 blue-gradient-with-opacity">
         <div className="container">
           <div className="section-title section-title-two">
             <h2>What Would You Like To Know?</h2>

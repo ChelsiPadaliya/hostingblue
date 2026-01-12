@@ -24,7 +24,7 @@ const Features = () => {
     smallTitle: "Our offer",
     mainTitle: "Hosting features",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis",
+      "High-performance hosting with strong security and guaranteed uptime for your website.",
   };
 
   useEffect(() => {

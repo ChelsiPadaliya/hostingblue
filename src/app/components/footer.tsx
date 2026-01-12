@@ -132,12 +132,6 @@ const Footer = () => {
                             <Link href="/faqs">FAQ's</Link>
                           </li>
                           <li>
-                            <Link href="#">Help Center</Link>
-                          </li>
-                          <li>
-                            <Link href="#">Live Chat</Link>
-                          </li>
-                          <li>
                             <Link href="tel:+919909005055">Call Support</Link>
                           </li>
                         </ul>
@@ -187,6 +181,15 @@ const Footer = () => {
                             rel="noopener noreferrer"
                           >
                             <i className="bx bxl-linkedin" />
+                          </a>
+                        </li>
+                        <li className="social-btn social-btn-whatsapp">
+                          <a
+                            href="https://wa.me/917600018145"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="bx bxl-whatsapp" />
                           </a>
                         </li>
                       </ul>

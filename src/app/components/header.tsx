@@ -545,6 +545,16 @@ const Header = () => {
                           </li>
                           <li className="nav-item">
                             <Link
+                              href="/payment"
+                              className={`nav-link ${
+                                isActive("/dedicated-hosting") ? "active" : ""
+                              }`}
+                            >
+                              Payment Option
+                            </Link>
+                          </li>
+                          <li className="nav-item">
+                            <Link
                               href="/terms-conditions"
                               className={`nav-link ${
                                 isActive("/shared-hosting") ? "active" : ""

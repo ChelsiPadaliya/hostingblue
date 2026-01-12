@@ -2572,6 +2572,12 @@ button:focus, button:active {
   background: #2867b2;
   color: #fff;
 }
+
+.social-btn.social-btn-whatsapp a {
+  background: #25D366;
+  color: #fff;
+}
+
 .social-btn.social-btn-yt a {
   background: #c80000;
   color: #fff;
@@ -4957,7 +4963,6 @@ hr {
 .wallet-content p {
   color: #5c5c5c;
   font-size: 15px;
-  margin-bottom: 20px;
 }
 
 .search-entry-box {
