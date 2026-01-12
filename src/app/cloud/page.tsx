@@ -16,7 +16,7 @@ interface Plan {
   sectionData: {
     hostingplan: {
       planname: string;
-      description: string;
+      description: { description: string }[];
       type: string[];
       plantable: PlanAttribute[];
     };
@@ -227,7 +227,13 @@ const CloudPageContent = () => {
                         <h3 className="pricing-header-title-text">
                           {safeRender(plan.sectionData.hostingplan.planname)}
                         </h3>
-                        <p>{safeRender(plan.sectionData.hostingplan.description)}</p>
+                        <p>
+                          {Array.isArray(plan.sectionData.hostingplan.description)
+                            ? plan.sectionData.hostingplan.description
+                                .map((desc) => desc.description)
+                                .join(', ')
+                            : ''}
+                        </p>
                       </div>
                       <div className="pricing-item-amount">
                         <p>Starting at</p>
