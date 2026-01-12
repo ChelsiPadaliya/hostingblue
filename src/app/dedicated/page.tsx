@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 interface PlanAttribute {
@@ -47,7 +47,7 @@ const DEDICATED_CATEGORIES = [
   },
 ];
 
-const DedicatedPage = () => {
+const DedicatedPageContent = () => {
   const searchParams = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("linux-dedicated");
   const [selectedTypes, setSelectedTypes] = useState<string[]>(["Linux", "Dedicated"]);
@@ -335,6 +335,14 @@ const DedicatedPage = () => {
         </section>
       )}
     </>
+  );
+};
+
+const DedicatedPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <DedicatedPageContent />
+    </Suspense>
   );
 };
 
