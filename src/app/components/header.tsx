@@ -317,12 +317,7 @@ const Header = () => {
                         <Link
                           href="#"
                           className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/dedicated-hosting") ||
-                            pathname?.startsWith("/shared-hosting") ||
-                            pathname?.startsWith("/vps-hosting") ||
-                            pathname?.startsWith("/wordpress-hosting") ||
-                            pathname?.startsWith("/cloud-hosting") ||
-                            pathname?.startsWith("/domain-name")
+                            pathname?.startsWith("/cloud")
                               ? "active"
                               : ""
                           }`}
@@ -341,7 +336,7 @@ const Header = () => {
                             </Link>
                           </li>
                           <li className="nav-item">
-                            <Link
+                             <Link
                               href="/cloud?category=affordable-cloud"
                               className={`nav-link ${
                                 isActive("/cloud") ? "active" : ""
@@ -360,7 +355,7 @@ const Header = () => {
                               Premium
                             </Link>
                           </li>
-                          {/* <li className="nav-item">
+                          <li className="nav-item">
                             <Link
                               href="/cloud?category=dedicated"
                               className={`nav-link ${
@@ -369,9 +364,50 @@ const Header = () => {
                             >
                               Dedicated
                             </Link>
-                          </li> */}
+                          </li>
                         </ul>
                       </li>
+                         <li className="nav-item">
+                            <Link
+                              href="#"
+                              className={`nav-link dropdown-toggle ${
+                                pathname?.startsWith("/dedicated-hosting") ||
+                                pathname?.startsWith("/shared-hosting") ||
+                                pathname?.startsWith("/vps-hosting") ||
+                                pathname?.startsWith("/wordpress-hosting") ||
+                                pathname?.startsWith("/cloud-hosting") ||
+                                pathname?.startsWith("/domain-name")
+                                  ? "active"
+                                  : ""
+                              }`}
+                            >
+                              Dedicated Server
+                            </Link>
+                            <ul className="dropdown-menu">
+                              <li className="nav-item">
+                                <Link
+                                  href="/dedicated?category=linux-dedicated"
+                                  className={`nav-link ${
+                                    isActive("/storage")
+                                      ? "active"
+                                      : ""
+                                  }`}
+                                >
+                                  Linux Dedicated server
+                                </Link>
+                              </li>
+                              <li className="nav-item">
+                                <Link
+                                  href="/dedicated?category=windows-dedicated"
+                                  className={`nav-link ${
+                                    isActive("/storage") ? "active" : ""
+                                  }`}
+                                >
+                                  Windows Dedicated Server
+                                </Link>
+                              </li>
+                            </ul>
+                          </li>
                       <li className="nav-item">
                         <Link
                           href="#"

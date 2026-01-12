@@ -37,12 +37,12 @@ interface Feature {
 
 const CLOUD_CATEGORIES = [
   {
-    value: "hanarad-cloud-vps",
+    value: "hanarad-cloud",
     label: "Hanarad Cloud VPS Hosting",
     types: ["Hanarad", "Cloud"],
   },
   {
-    value: "affordable-cloud-vps",
+    value: "affordable-cloud",
     label: "Affordable Cloud VPS Hosting",
     types: ["Affordable", "Cloud"],
   },
