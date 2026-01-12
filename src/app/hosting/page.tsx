@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 interface PlanAttribute {
   attribute: string;
@@ -265,9 +266,9 @@ const HostingPageContent = () => {
                         <p className="text-center">No features available</p>
                       )}
 
-                      <a href="/cart" className="btn btn-gradient">
+                      <Link href="/cart" className="btn btn-gradient">
                         Buy Now
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const page = () => {
+const PrivacyPolicyPage = () => {
   const [loading, setLoading] = useState(true);
   const [activeAccordion, setActiveAccordion] = useState(0);
 
@@ -246,4 +246,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default PrivacyPolicyPage;

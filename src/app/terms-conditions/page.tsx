@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const page = () => {
+const TermsConditionsPage = () => {
   const [loading, setLoading] = useState(true);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(0);
 
@@ -203,4 +203,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default TermsConditionsPage;

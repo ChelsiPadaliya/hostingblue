@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
@@ -360,7 +360,7 @@ const Header = () => {
                               Premium
                             </Link>
                           </li>
-                          <li className="nav-item">
+                          {/* <li className="nav-item">
                             <Link
                               href="/cloud?category=dedicated"
                               className={`nav-link ${
@@ -369,49 +369,9 @@ const Header = () => {
                             >
                               Dedicated
                             </Link>
-                          </li>
+                          </li> */}
                         </ul>
                       </li>
-                      <li className="nav-item">
-                        <Link
-                          href="#"
-                          className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/dedicated-hosting") ||
-                            pathname?.startsWith("/shared-hosting") ||
-                            pathname?.startsWith("/vps-hosting") ||
-                            pathname?.startsWith("/wordpress-hosting") ||
-                            pathname?.startsWith("/cloud-hosting") ||
-                            pathname?.startsWith("/domain-name")
-                              ? "active"
-                              : ""
-                          }`}
-                        >
-                          Dedicated Server
-                        </Link>
-                        <ul className="dropdown-menu">
-                          <li className="nav-item">
-                            <Link
-                              href="/dedicated?category=linux-dedicated"
-                              className={`nav-link ${
-                                isActive("/dedicated") ? "active" : ""
-                              }`}
-                            >
-                              Linux Dedicated Server
-                            </Link>
-                          </li>
-                          <li className="nav-item">
-                            <Link
-                              href="/dedicated?category=windows-dedicated"
-                              className={`nav-link ${
-                                isActive("/dedicated") ? "active" : ""
-                              }`}
-                            >
-                              Windows Dedicated Server
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-
                       <li className="nav-item">
                         <Link
                           href="#"
@@ -590,7 +550,7 @@ const Header = () => {
                                 isActive("/vps-hosting") ? "active" : ""
                               }`}
                             >
-                              FAQ's
+                              FAQ&apos;s
                             </Link>
                           </li>
                         </ul>

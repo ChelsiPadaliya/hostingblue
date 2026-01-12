@@ -31,7 +31,7 @@ interface PaymentData {
   cvn: string;
 }
 
-const page = () => {
+const CheckoutPage = () => {
   const [billingData, setBillingData] = useState<BillingData>({
     email: "",
     phone: "",
@@ -140,7 +140,7 @@ const page = () => {
                             onChange={(e) => setAlertsEnabled(e.target.checked)}
                           />
                           <label className="form-check-label" htmlFor="check1">
-                            Get alert of product updates & offers
+                            Get alert of product updates &amp; offers
                           </label>
                         </div>
                       </div>
@@ -332,7 +332,7 @@ const page = () => {
                 </div>
                 <div className="checkout-payment-area default-box-shadow">
                   <div className="sub-section-title mb-20">
-                    <h3>What's Payment Method</h3>
+                    <h3>What&apos;s Payment Method</h3>
                   </div>
                   <div className="checkout-form">
                     <form onSubmit={handlePaymentSubmit}>
@@ -464,4 +464,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default CheckoutPage;

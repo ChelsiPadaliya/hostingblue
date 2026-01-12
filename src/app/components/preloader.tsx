@@ -6,11 +6,9 @@ import Image from "next/image";
 
 const Preloader = () => {
   const pathname = usePathname();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500);
