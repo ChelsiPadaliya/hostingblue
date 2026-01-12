@@ -218,7 +218,7 @@ const CloudPageContent = () => {
                         <h3 className="pricing-header-title-text">
                           {plan.sectionData.hostingplan.planname}
                         </h3>
-                        <p>{plan.sectionData.hostingplan.description}</p>
+                        <p>{typeof plan.sectionData.hostingplan.description === 'string' ? plan.sectionData.hostingplan.description : JSON.stringify(plan.sectionData.hostingplan.description)}</p>
                       </div>
                       <div className="pricing-item-amount">
                         <p>Starting at</p>
