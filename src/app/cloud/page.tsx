@@ -61,7 +61,7 @@ const CLOUD_CATEGORIES = [
 const CloudPageContent = () => {
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
-  const [selectedCategory, setSelectedCategory] = useState("hanarad-cloud-vps");
+  const [selectedCategory, setSelectedCategory] = useState("hanarad-cloud");
   const [selectedTypes, setSelectedTypes] = useState<string[]>(["Hanarad", "Cloud"]);
   const [plans, setPlans] = useState<Plan[]>([]);
   const [features, setFeatures] = useState<Feature[]>([]);
@@ -83,6 +83,15 @@ const CloudPageContent = () => {
       }
     }
   }, [searchParams]);
+
+  // Add error boundary for safe rendering
+  const safeRender = (value: any) => {
+    if (typeof value === 'string') return value;
+    if (typeof value === 'object' && value !== null) {
+      return JSON.stringify(value);
+    }
+    return String(value || '');
+  };
 
   const handleCategoryChange = (categoryValue: string) => {
     const category = CLOUD_CATEGORIES.find(
@@ -216,9 +225,9 @@ const CloudPageContent = () => {
                     <div className="pricing-secondary-header">
                       <div className="pricing-header-title">
                         <h3 className="pricing-header-title-text">
-                          {plan.sectionData.hostingplan.planname}
+                          {safeRender(plan.sectionData.hostingplan.planname)}
                         </h3>
-                        <p>{typeof plan.sectionData.hostingplan.description === 'string' ? plan.sectionData.hostingplan.description : JSON.stringify(plan.sectionData.hostingplan.description)}</p>
+                        <p>{safeRender(plan.sectionData.hostingplan.description)}</p>
                       </div>
                       <div className="pricing-item-amount">
                         <p>Starting at</p>
@@ -231,8 +240,8 @@ const CloudPageContent = () => {
                               );
                             return monthlyAttr ? (
                               <>
-                                <small>{monthlyAttr.unit}</small>
-                                {monthlyAttr.value}
+                                <small>{safeRender(monthlyAttr.unit)}</small>
+                                {safeRender(monthlyAttr.value)}
                                 <span>/Month</span>
                               </>
                             ) : (
@@ -255,7 +264,7 @@ const CloudPageContent = () => {
                             )
                             .map((attr, index) => (
                               <li key={index}>
-                                {attr.value} {attr.unit} {attr.attribute}
+                                {safeRender(attr.value)} {safeRender(attr.unit)} {safeRender(attr.attribute)}
                               </li>
                             ))}
                         </ul>
