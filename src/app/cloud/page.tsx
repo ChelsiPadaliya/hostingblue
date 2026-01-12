@@ -218,10 +218,10 @@ const CloudPageContent = () => {
           </div>
 
           {filteredPlans.length > 0 ? (
-            <div className="row">
+            <div className="row d-flex">
               {filteredPlans.map((plan) => (
-                <div key={plan._id} className="col-sm-12 col-md-6 col-lg-3">
-                  <div className="pricing-item pricing-item-two">
+                <div key={plan._id} className="col-sm-12 col-md-6 col-lg-3 d-flex">
+                  <div className="pricing-item pricing-item-two w-100 d-flex flex-column">
                     <div className="pricing-secondary-header">
                       <div className="pricing-header-title">
                         <h3 className="pricing-header-title-text">
@@ -260,7 +260,7 @@ const CloudPageContent = () => {
                       </div>
                     </div>
 
-                    <div className="pricing-item-body">
+                    <div className="pricing-item-body flex-grow-1 d-flex flex-column">
                       {plan.sectionData.hostingplan.plantable.length > 0 ? (
                         <ul className="pricing-body-list pricing-body-list-two">
                           {plan.sectionData.hostingplan.plantable
@@ -278,7 +278,7 @@ const CloudPageContent = () => {
                         <p className="text-center">No features available</p>
                       )}
 
-                      <Link href="/cart" className="btn btn-gradient">
+                      <Link href="/cart" className="btn btn-gradient mt-auto">
                         Buy Now
                       </Link>
                     </div>
