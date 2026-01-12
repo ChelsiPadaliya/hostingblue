@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 interface PlanAttribute {
@@ -57,7 +57,7 @@ const CLOUD_CATEGORIES = [
   },
 ];
 
-const CloudPage = () => {
+const CloudPageContent = () => {
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
   const [selectedCategory, setSelectedCategory] = useState("hanarad-cloud-vps");
@@ -346,6 +346,14 @@ const CloudPage = () => {
         </section>
       )}
     </>
+  );
+};
+
+const CloudPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CloudPageContent />
+    </Suspense>
   );
 };
 
