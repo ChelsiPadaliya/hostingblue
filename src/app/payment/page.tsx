@@ -19,7 +19,7 @@ const page = () => {
                   </div>
                   <div className="wallet-content">
                     <p>ACCOUNT NO : 914020013038476 (Current Account)</p>
-                    <p> IFS CODE :UTIB 0001339</p>
+                    <p> IFS CODE : UTIB 0001339</p>
                     <p>Axis Bank Keshod(GJ)</p>
                     <p> Paypal Id : Conscor@gmail.com</p>
                   </div>
@@ -35,9 +35,9 @@ const page = () => {
                   </div>
                   <div className="wallet-content">
                     <p>ACCOUNT NO : 034505500445 (Current Account)</p>
-                    <p> IFS CODE : ICIC0000586</p>
+                    <p>IFS CODE : ICIC0000586</p>
                     <p>ICICI Bank Prahalad Nagar, Ahmedabad(GJ)</p>
-                    <p> GSTIN : 24AAHCR1394Q1ZS</p>
+                    <p>GSTIN : 24AAHCR1394Q1ZS</p>
                   </div>
                 </div>
               </div>

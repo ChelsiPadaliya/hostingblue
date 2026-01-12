@@ -14,7 +14,7 @@ interface PlanAttribute {
 interface Plan {
   _id: string;
   sectionData: {
-    emailplan: {
+    hostingplan: {
       planname: string;
       description: string;
       type: string[];
@@ -103,7 +103,7 @@ const EmailPageContent = () => {
   const getAllAvailableTypes = () => {
     const allTypes = new Set<string>();
     plans.forEach((plan) => {
-      plan.sectionData.emailplan.type.forEach((type) => {
+      plan.sectionData.hostingplan.type.forEach((type) => {
         allTypes.add(type);
       });
     });
@@ -122,7 +122,7 @@ const EmailPageContent = () => {
           },
           body: JSON.stringify({
             appName: "app6121010948209",
-            moduleName: "emailplan",
+            moduleName: "hostingplan",
             query: {},
             projection: {},
             limit: 0,
@@ -145,15 +145,16 @@ const EmailPageContent = () => {
 
   const filteredPlans = plans.filter((plan) =>
     selectedTypes.every((type) =>
-      plan.sectionData.emailplan.type.includes(type)
+      plan.sectionData.hostingplan.type.includes(type)
     )
   );
 
   const filteredFeatures = features.filter((feature) =>
-    selectedTypes.every((type) =>
-      feature.sectionData.emailfeature.tags.includes(type)
-    )
-  );
+  selectedTypes.every((type) =>
+    feature.sectionData.emailfeature.tags.includes(type)
+  )
+);
+
 
   if (loading) {
     return (
@@ -216,16 +217,16 @@ const EmailPageContent = () => {
                     <div className="pricing-secondary-header">
                       <div className="pricing-header-title">
                         <h3 className="pricing-header-title-text">
-                          {plan.sectionData.emailplan.planname}
+                          {plan.sectionData.hostingplan.planname}
                         </h3>
-                        <p>{plan.sectionData.emailplan.description}</p>
+                        <p>{plan.sectionData.hostingplan.description}</p>
                       </div>
                       <div className="pricing-item-amount">
                         <p>Starting at</p>
                         <h4 className="pricing-item-amount-number">
                           {(() => {
                             const monthlyAttr =
-                              plan.sectionData.emailplan.plantable.find(
+                              plan.sectionData.hostingplan.plantable.find(
                                 (attr) =>
                                   attr.attribute.toLowerCase() === "monthly"
                               );
@@ -246,9 +247,9 @@ const EmailPageContent = () => {
                     </div>
 
                     <div className="pricing-item-body">
-                      {plan.sectionData.emailplan.plantable.length > 0 ? (
+                      {plan.sectionData.hostingplan.plantable.length > 0 ? (
                         <ul className="pricing-body-list pricing-body-list-two">
-                          {plan.sectionData.emailplan.plantable
+                          {plan.sectionData.hostingplan.plantable
                             .filter(
                               (attr) =>
                                 attr.attribute.toLowerCase() !== "monthly"
