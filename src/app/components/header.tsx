@@ -255,15 +255,10 @@ const Header = () => {
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <Link
+                         <Link
                           href="#"
                           className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/dedicated-hosting") ||
-                            pathname?.startsWith("/shared-hosting") ||
-                            pathname?.startsWith("/vps-hosting") ||
-                            pathname?.startsWith("/wordpress-hosting") ||
-                            pathname?.startsWith("/cloud-hosting") ||
-                            pathname?.startsWith("/domain-name")
+                            pathname?.startsWith("/hosting")
                               ? "active"
                               : ""
                           }`}
@@ -275,7 +270,7 @@ const Header = () => {
                             <Link
                               href="/hosting?category=linux-shared"
                               className={`nav-link ${
-                                isActive("/dedicated-hosting") ? "active" : ""
+                                isActive("/linux-shared") ? "active" : ""
                               }`}
                             >
                               linux shared hosting
@@ -285,7 +280,7 @@ const Header = () => {
                             <Link
                               href="/hosting?category=windows-shared"
                               className={`nav-link ${
-                                isActive("/shared-hosting") ? "active" : ""
+                                isActive("/windows-shared") ? "active" : ""
                               }`}
                             >
                               windows shared hosting
@@ -295,7 +290,7 @@ const Header = () => {
                             <Link
                               href="/hosting?category=linux-reseller"
                               className={`nav-link ${
-                                isActive("/vps-hosting") ? "active" : ""
+                                isActive("/linux-reseller") ? "active" : ""
                               }`}
                             >
                               linux reseller hosting
@@ -305,7 +300,7 @@ const Header = () => {
                             <Link
                               href="/hosting?category=windows-reseller"
                               className={`nav-link ${
-                                isActive("/wordpress-hosting") ? "active" : ""
+                                isActive("/windows-reseller") ? "active" : ""
                               }`}
                             >
                               windows reseller hosting
@@ -329,7 +324,7 @@ const Header = () => {
                             <Link
                               href="/cloud?category=hanarad-cloud"
                               className={`nav-link ${
-                                isActive("/cloud") ? "active" : ""
+                                isActive("/hanarad-cloud") ? "active" : ""
                               }`}
                             >
                               Hanarad Cloud VPS Hosting
@@ -339,7 +334,7 @@ const Header = () => {
                              <Link
                               href="/cloud?category=affordable-cloud"
                               className={`nav-link ${
-                                isActive("/cloud") ? "active" : ""
+                                isActive("/afforable-cloud") ? "active" : ""
                               }`}
                             >
                               Affordable Cloud VPS Hosting
@@ -349,7 +344,7 @@ const Header = () => {
                             <Link
                               href="/cloud?category=premium"
                               className={`nav-link ${
-                                isActive("/cloud") ? "active" : ""
+                                isActive("/premium") ? "active" : ""
                               }`}
                             >
                               Premium
@@ -359,7 +354,7 @@ const Header = () => {
                             <Link
                               href="/cloud?category=dedicated"
                               className={`nav-link ${
-                                isActive("/cloud") ? "active" : ""
+                                isActive("/dedicated") ? "active" : ""
                               }`}
                             >
                               Dedicated
@@ -369,18 +364,13 @@ const Header = () => {
                       </li>
                          <li className="nav-item">
                             <Link
-                              href="#"
-                              className={`nav-link dropdown-toggle ${
-                                pathname?.startsWith("/dedicated-hosting") ||
-                                pathname?.startsWith("/shared-hosting") ||
-                                pathname?.startsWith("/vps-hosting") ||
-                                pathname?.startsWith("/wordpress-hosting") ||
-                                pathname?.startsWith("/cloud-hosting") ||
-                                pathname?.startsWith("/domain-name")
-                                  ? "active"
-                                  : ""
-                              }`}
-                            >
+                          href="#"
+                          className={`nav-link dropdown-toggle ${
+                            pathname?.startsWith("/dedicated")
+                              ? "active"
+                              : ""
+                          }`}
+                        >
                               Dedicated Server
                             </Link>
                             <ul className="dropdown-menu">
@@ -388,7 +378,7 @@ const Header = () => {
                                 <Link
                                   href="/dedicated?category=linux-dedicated"
                                   className={`nav-link ${
-                                    isActive("/storage")
+                                    isActive("/linux-dedicated")
                                       ? "active"
                                       : ""
                                   }`}
@@ -400,7 +390,7 @@ const Header = () => {
                                 <Link
                                   href="/dedicated?category=windows-dedicated"
                                   className={`nav-link ${
-                                    isActive("/storage") ? "active" : ""
+                                    isActive("/windows-dedicated") ? "active" : ""
                                   }`}
                                 >
                                   Windows Dedicated Server
@@ -412,12 +402,7 @@ const Header = () => {
                         <Link
                           href="#"
                           className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/dedicated-hosting") ||
-                            pathname?.startsWith("/shared-hosting") ||
-                            pathname?.startsWith("/vps-hosting") ||
-                            pathname?.startsWith("/wordpress-hosting") ||
-                            pathname?.startsWith("/cloud-hosting") ||
-                            pathname?.startsWith("/domain-name")
+                            pathname?.startsWith("/email")
                               ? "active"
                               : ""
                           }`}
@@ -429,7 +414,7 @@ const Header = () => {
                             <Link
                               href="/email?category=webmail"
                               className={`nav-link ${
-                                isActive("/email") ? "active" : ""
+                                isActive("/webmail") ? "active" : ""
                               }`}
                             >
                               Webmail Hosting
@@ -439,7 +424,7 @@ const Header = () => {
                             <Link
                               href="/email?category=google-workspace"
                               className={`nav-link ${
-                                isActive("/email") ? "active" : ""
+                                isActive("/google-workspace") ? "active" : ""
                               }`}
                             >
                               Google Workspace
@@ -449,7 +434,7 @@ const Header = () => {
                             <Link
                               href="/email?category=microsoft-office-365"
                               className={`nav-link ${
-                                isActive("/email") ? "active" : ""
+                                isActive("/microsoft-office-365") ? "active" : ""
                               }`}
                             >
                               Microsoft Office 365
@@ -459,7 +444,7 @@ const Header = () => {
                             <Link
                               href="/email?category=zoho"
                               className={`nav-link ${
-                                isActive("/email") ? "active" : ""
+                                isActive("/zoho") ? "active" : ""
                               }`}
                             >
                               Zoho Email
@@ -471,19 +456,14 @@ const Header = () => {
                         
                       </li>
                        <li className="nav-item">
-                            <Link
-                              href="#"
-                              className={`nav-link dropdown-toggle ${
-                                pathname?.startsWith("/dedicated-hosting") ||
-                                pathname?.startsWith("/shared-hosting") ||
-                                pathname?.startsWith("/vps-hosting") ||
-                                pathname?.startsWith("/wordpress-hosting") ||
-                                pathname?.startsWith("/cloud-hosting") ||
-                                pathname?.startsWith("/domain-name")
-                                  ? "active"
-                                  : ""
-                              }`}
-                            >
+                             <Link
+                          href="#"
+                          className={`nav-link dropdown-toggle ${
+                            pathname?.startsWith("/storage")
+                              ? "active"
+                              : ""
+                          }`}
+                        >
                               Storage
                             </Link>
                             <ul className="dropdown-menu">
@@ -491,7 +471,7 @@ const Header = () => {
                                 <Link
                                   href="/storage?category=cloud-storage"
                                   className={`nav-link ${
-                                    isActive("/storage")
+                                    isActive("/cloud-storage")
                                       ? "active"
                                       : ""
                                   }`}
@@ -503,7 +483,7 @@ const Header = () => {
                                 <Link
                                   href="/storage?category=object-storage"
                                   className={`nav-link ${
-                                    isActive("/storage") ? "active" : ""
+                                    isActive("/object-storage") ? "active" : ""
                                   }`}
                                 >
                                   Object Storage
@@ -515,16 +495,7 @@ const Header = () => {
                        <li className="nav-item">
                         <Link
                           href="#"
-                          className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/dedicated-hosting") ||
-                            pathname?.startsWith("/shared-hosting") ||
-                            pathname?.startsWith("/vps-hosting") ||
-                            pathname?.startsWith("/wordpress-hosting") ||
-                            pathname?.startsWith("/cloud-hosting") ||
-                            pathname?.startsWith("/domain-name")
-                              ? "active"
-                              : ""
-                          }`}
+                          className={`nav-link dropdown-toggle`}
                         >
                           Pages
                         </Link>
@@ -533,7 +504,7 @@ const Header = () => {
                             <Link
                               href="/about"
                               className={`nav-link ${
-                                isActive("/dedicated-hosting") ? "active" : ""
+                                isActive("/about") ? "active" : ""
                               }`}
                             >
                               About
@@ -543,7 +514,7 @@ const Header = () => {
                             <Link
                               href="/payment"
                               className={`nav-link ${
-                                isActive("/dedicated-hosting") ? "active" : ""
+                                isActive("/payment") ? "active" : ""
                               }`}
                             >
                               Payment Option
@@ -553,7 +524,7 @@ const Header = () => {
                             <Link
                               href="/terms-conditions"
                               className={`nav-link ${
-                                isActive("/shared-hosting") ? "active" : ""
+                                isActive("/terms-conditions") ? "active" : ""
                               }`}
                             >
                               Terms and Condition
@@ -563,7 +534,7 @@ const Header = () => {
                             <Link
                               href="/privacy-policy"
                               className={`nav-link ${
-                                isActive("/vps-hosting") ? "active" : ""
+                                isActive("/privacy-policy") ? "active" : ""
                               }`}
                             >
                               Privacy Policy
@@ -573,7 +544,7 @@ const Header = () => {
                             <Link
                               href="/contact-us"
                               className={`nav-link ${
-                                isActive("/vps-hosting") ? "active" : ""
+                                isActive("/contact-us") ? "active" : ""
                               }`}
                             >
                               Contact
@@ -583,7 +554,7 @@ const Header = () => {
                             <Link
                               href="/faqs"
                               className={`nav-link ${
-                                isActive("/vps-hosting") ? "active" : ""
+                                isActive("/faqs") ? "active" : ""
                               }`}
                             >
                               FAQ&apos;s
