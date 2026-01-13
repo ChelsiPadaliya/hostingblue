@@ -57,12 +57,12 @@ const Footer = () => {
 
                     <p>
                       Email:{" "}
-                      <a href="mailto:live@hostingblue.in">
+                      <Link href="mailto:live@hostingblue.in">
                         live@hostingblue.in
-                      </a>
+                      </Link>
                     </p>
                     <p>
-                      Phone: <a href="tel:+919909005055">+91 99090 05055</a>
+                      Phone: <Link href="tel:+919909005055">+91 99090 05055</Link>
                     </p>
                   </div>
                 </div>

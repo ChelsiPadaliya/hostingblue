@@ -30,17 +30,18 @@ const Features = () => {
   useEffect(() => {
     const fetchFeatures = async () => {
       try {
-        const response = await fetch('/api/hosting-features');
+        const response = await fetch("/api/hosting-features");
         const data = await response.json();
-        
+
         if (data.success) {
-          const filteredFeatures = data.data.filter((feature: HostingFeature) =>
-            feature.sectionData.hostingfeature.showinhomepage === true
+          const filteredFeatures = data.data.filter(
+            (feature: HostingFeature) =>
+              feature.sectionData.hostingfeature.showinhomepage === true
           );
           setFeatures(filteredFeatures);
         }
       } catch (error) {
-        console.error('Error fetching features:', error);
+        console.error("Error fetching features:", error);
       } finally {
         setLoading(false);
       }
@@ -102,7 +103,13 @@ const Features = () => {
                         height={60}
                       />
                     ) : (
-                      <div style={{ width: 60, height: 60, backgroundColor: '#f0f0f0' }}></div>
+                      <div
+                        style={{
+                          width: 60,
+                          height: 60,
+                          backgroundColor: "#f0f0f0",
+                        }}
+                      ></div>
                     )}
                   </div>
 

@@ -45,22 +45,44 @@ export default function RootLayout({
         <link rel="stylesheet" href="/assets/css/responsive.css" />
       </head>
 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Preloader/>
-        <Header/>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Preloader />
+        <Header />
         {children}
 
-       
         <Script src="/assets/js/jquery.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/jquery.magnific-popup.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/owl.carousel.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/jquery.ajaxchimp.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/form-validator.min.js" strategy="afterInteractive" />
-        <Script src="/assets/js/contact-form-script.js" strategy="afterInteractive" />
-        <Script src="/assets/js/jquery.meanmenu.min.js" strategy="afterInteractive" />
+        <Script
+          src="/assets/js/bootstrap.bundle.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/js/jquery.magnific-popup.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/js/owl.carousel.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/js/jquery.ajaxchimp.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/js/form-validator.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/js/contact-form-script.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="/assets/js/jquery.meanmenu.min.js"
+          strategy="afterInteractive"
+        />
         <Script src="/assets/js/script.js" strategy="afterInteractive" />
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

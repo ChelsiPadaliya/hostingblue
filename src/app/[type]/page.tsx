@@ -39,57 +39,61 @@ const DynamicHostingPage: React.FC = () => {
   const [plans, setPlans] = useState<HostingPlan[]>([]);
   const [features, setFeatures] = useState<HostingFeature[]>([]);
   const [loading, setLoading] = useState(true);
-  
+
   const hostingType = params.type as string;
   const getTagFromType = (type: string) => {
     const typeMap: { [key: string]: string } = {
-      'cloud-hosting': 'H Cloud',
-      'linux-hosting': 'Linux',
-      'vps-hosting': 'VPS',
-      'shared-hosting': 'Shared',
-      'dedicated-hosting': 'Dedicated',
-      'wordpress-hosting': 'WordPress'
+      "cloud-hosting": "H Cloud",
+      "linux-hosting": "Linux",
+      "vps-hosting": "VPS",
+      "shared-hosting": "Shared",
+      "dedicated-hosting": "Dedicated",
+      "wordpress-hosting": "WordPress",
     };
-    return typeMap[type] || type.replace('-hosting', '');
+    return typeMap[type] || type.replace("-hosting", "");
   };
-  
+
   const tagForFeatures = getTagFromType(hostingType);
-  const formattedType = hostingType?.replace('-hosting', '').trim();
+  const formattedType = hostingType?.replace("-hosting", "").trim();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [plansResponse, featuresResponse] = await Promise.all([
-          fetch('/api/hosting-plans'),
-          fetch(`/api/hosting-features?tag=${encodeURIComponent(tagForFeatures)}`)
+          fetch("/api/hosting-plans"),
+          fetch(
+            `/api/hosting-features?tag=${encodeURIComponent(tagForFeatures)}`
+          ),
         ]);
-        
+
         const plansData = await plansResponse.json();
         const featuresData = await featuresResponse.json();
-        
+
         if (plansData.success) {
           const filteredPlans = plansData.data.filter((plan: HostingPlan) =>
-            plan.sectionData.hostingplan.type.some(type => {
+            plan.sectionData.hostingplan.type.some((type) => {
               const planType = type.toLowerCase().trim();
               const searchType = formattedType?.toLowerCase();
               // Handle special cases
-              if (searchType === 'vps' && planType === 'vps') return true;
-              if (searchType === 'cloud' && planType === 'cloud') return true;
-              if (searchType === 'linux' && planType === 'linux') return true;
-              if (searchType === 'shared' && planType === 'shared') return true;
-              if (searchType === 'dedicated' && planType === 'dedicated') return true;
-              if (searchType === 'wordpress' && planType === 'wordpress') return true;
+              if (searchType === "vps" && planType === "vps") return true;
+              if (searchType === "cloud" && planType === "cloud") return true;
+              if (searchType === "linux" && planType === "linux") return true;
+              if (searchType === "shared" && planType === "shared") return true;
+              if (searchType === "dedicated" && planType === "dedicated")
+                return true;
+              if (searchType === "wordpress" && planType === "wordpress")
+                return true;
               return planType === searchType;
             })
           );
           setPlans(filteredPlans);
         }
-        
+
         if (featuresData.success) {
           setFeatures(featuresData.data);
         }
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
@@ -109,7 +113,10 @@ const DynamicHostingPage: React.FC = () => {
       <section className="pricing-section -mt-[90px] pb-70">
         <div className="container">
           <div className="section-title section-title-two">
-            <h2>{formattedType?.charAt(0).toUpperCase() + formattedType?.slice(1)} Hosting Plans</h2>
+            <h2>
+              {formattedType?.charAt(0).toUpperCase() + formattedType?.slice(1)}{" "}
+              Hosting Plans
+            </h2>
             <p>
               Choose the perfect {formattedType} hosting plan for your needs
             </p>
@@ -136,11 +143,16 @@ const DynamicHostingPage: React.FC = () => {
 
                   <div className="pricing-item-body">
                     <ul className="pricing-body-list pricing-body-list-two">
-                      {plan.sectionData.hostingplan.plantable.map((attr, index) => (
-                        <li key={index}>
-                          {attr.attribute} <span>({attr.value} {attr.unit})</span>
-                        </li>
-                      ))}
+                      {plan.sectionData.hostingplan.plantable.map(
+                        (attr, index) => (
+                          <li key={index}>
+                            {attr.attribute}{" "}
+                            <span>
+                              ({attr.value} {attr.unit})
+                            </span>
+                          </li>
+                        )
+                      )}
                     </ul>
 
                     <a href="cart.html" className="btn btn-gradient">
@@ -153,14 +165,21 @@ const DynamicHostingPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {features.length > 0 && (
         <section className="feature-section bg-off-white-gradient pt-40 pb-70">
           <div className="container">
             <div className="section-title section-title-two">
               <small>Features</small>
-              <h2>{formattedType?.charAt(0).toUpperCase() + formattedType?.slice(1)} Features</h2>
-              <p>Discover the powerful features included with your {formattedType} hosting</p>
+              <h2>
+                {formattedType?.charAt(0).toUpperCase() +
+                  formattedType?.slice(1)}{" "}
+                Features
+              </h2>
+              <p>
+                Discover the powerful features included with your{" "}
+                {formattedType} hosting
+              </p>
             </div>
 
             <div className="row">
@@ -177,7 +196,13 @@ const DynamicHostingPage: React.FC = () => {
                             height={60}
                           />
                         ) : (
-                          <div style={{ width: 60, height: 60, backgroundColor: '#f0f0f0' }}></div>
+                          <div
+                            style={{
+                              width: 60,
+                              height: 60,
+                              backgroundColor: "#f0f0f0",
+                            }}
+                          ></div>
                         )}
                       </div>
 

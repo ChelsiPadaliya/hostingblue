@@ -157,33 +157,55 @@ const TermsConditionsPage = () => {
                 {[
                   {
                     title: " What types of hosting do you offer?",
-                    content: "Hostingblue offers Linux and Windows Shared Hosting,Linux and Windows Reseller Hosting, VPS Hosting, and other web hosting solutions designed to meet different business requirements."
+                    content:
+                      "Hostingblue offers Linux and Windows Shared Hosting,Linux and Windows Reseller Hosting, VPS Hosting, and other web hosting solutions designed to meet different business requirements.",
                   },
                   {
                     title: "Can I upgrade my hosting plan later?",
-                    content: "Absolutely. You can upgrade or downgrade your hosting plan at any time based on your requirements. Our support team will assist you during the transition to ensure minimal downtime."
+                    content:
+                      "Absolutely. You can upgrade or downgrade your hosting plan at any time based on your requirements. Our support team will assist you during the transition to ensure minimal downtime.",
                   },
                   {
                     title: "Do you provide customer support?",
-                    content: "Yes. Hostingblue offers customer support through email and ticket-based systems. Our support team is available to help with technical issues, account queries, and service-related questions."
+                    content:
+                      "Yes. Hostingblue offers customer support through email and ticket-based systems. Our support team is available to help with technical issues, account queries, and service-related questions.",
                   },
                   {
                     title: "Are there any hidden charges?",
-                    content: " No. Hostingblue believes in transparent pricing. All features and pricing details are clearly mentioned on our website. Any additional charges will be communicated in advance."
-                  }
+                    content:
+                      " No. Hostingblue believes in transparent pricing. All features and pricing details are clearly mentioned on our website. Any additional charges will be communicated in advance.",
+                  },
                 ].map((faq, index) => (
-                  <div key={index} className={`faq-accordion-item bg-white ${activeAccordion === index ? 'faq-accordion-item-active' : ''}`}>
-                    <div className="faq-accordion-header" onClick={() => setActiveAccordion(activeAccordion === index ? null : index)} style={{ cursor: 'pointer' }}>
-                      <h3 className="faq-accordion-title">
-                        {faq.title}
-                      </h3>
-                      {activeAccordion !== index && <div className="faq-accordion-header-overlay" />}
+                  <div
+                    key={index}
+                    className={`faq-accordion-item bg-white ${
+                      activeAccordion === index
+                        ? "faq-accordion-item-active"
+                        : ""
+                    }`}
+                  >
+                    <div
+                      className="faq-accordion-header"
+                      onClick={() =>
+                        setActiveAccordion(
+                          activeAccordion === index ? null : index
+                        )
+                      }
+                      style={{ cursor: "pointer" }}
+                    >
+                      <h3 className="faq-accordion-title">{faq.title}</h3>
+                      {activeAccordion !== index && (
+                        <div className="faq-accordion-header-overlay" />
+                      )}
                     </div>
-                    <div className="faq-accordion-body" style={{ display: activeAccordion === index ? 'block' : 'none' }}>
+                    <div
+                      className="faq-accordion-body"
+                      style={{
+                        display: activeAccordion === index ? "block" : "none",
+                      }}
+                    >
                       <div className="faq-accordion-body-inner">
-                        <p className="faq-accordion-para">
-                          {faq.content}
-                        </p>
+                        <p className="faq-accordion-para">{faq.content}</p>
                       </div>
                     </div>
                   </div>

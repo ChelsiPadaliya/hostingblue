@@ -47,7 +47,9 @@ const Header = () => {
                   <i className="flaticon-chat" />
                 </div>
                 <div className="topbar-list-content">
-                  <Link href="mailto:live@hostingblue.in">live@hostingblue.in</Link>
+                  <Link href="mailto:live@hostingblue.in">
+                    live@hostingblue.in
+                  </Link>
                 </div>
               </div>
             </div>

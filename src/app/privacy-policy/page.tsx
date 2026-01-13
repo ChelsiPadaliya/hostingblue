@@ -159,8 +159,15 @@ const PrivacyPolicyPage = () => {
           <div className="row align-items-center">
             <div className="col-sm-12 col-md-12 col-lg-5 pb-30">
               <div className="faq-accordion">
-                <div className={`faq-accordion-item bg-white ${activeAccordion === 0 ? 'faq-accordion-item-active' : ''}`}>
-                  <div className="faq-accordion-header" onClick={() => toggleAccordion(0)}>
+                <div
+                  className={`faq-accordion-item bg-white ${
+                    activeAccordion === 0 ? "faq-accordion-item-active" : ""
+                  }`}
+                >
+                  <div
+                    className="faq-accordion-header"
+                    onClick={() => toggleAccordion(0)}
+                  >
                     <h3 className="faq-accordion-title">
                       What types of hosting do you offer?
                     </h3>
@@ -177,8 +184,15 @@ const PrivacyPolicyPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`faq-accordion-item bg-white ${activeAccordion === 1 ? 'faq-accordion-item-active' : ''}`}>
-                  <div className="faq-accordion-header" onClick={() => toggleAccordion(1)}>
+                <div
+                  className={`faq-accordion-item bg-white ${
+                    activeAccordion === 1 ? "faq-accordion-item-active" : ""
+                  }`}
+                >
+                  <div
+                    className="faq-accordion-header"
+                    onClick={() => toggleAccordion(1)}
+                  >
                     <h3 className="faq-accordion-title">
                       Can I upgrade my hosting plan later?
                     </h3>
@@ -195,8 +209,15 @@ const PrivacyPolicyPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`faq-accordion-item bg-white ${activeAccordion === 2 ? 'faq-accordion-item-active' : ''}`}>
-                  <div className="faq-accordion-header" onClick={() => toggleAccordion(2)}>
+                <div
+                  className={`faq-accordion-item bg-white ${
+                    activeAccordion === 2 ? "faq-accordion-item-active" : ""
+                  }`}
+                >
+                  <div
+                    className="faq-accordion-header"
+                    onClick={() => toggleAccordion(2)}
+                  >
                     <h3 className="faq-accordion-title">
                       Do you provide customer support?
                     </h3>
@@ -213,8 +234,15 @@ const PrivacyPolicyPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`faq-accordion-item bg-white ${activeAccordion === 3 ? 'faq-accordion-item-active' : ''}`}>
-                  <div className="faq-accordion-header" onClick={() => toggleAccordion(3)}>
+                <div
+                  className={`faq-accordion-item bg-white ${
+                    activeAccordion === 3 ? "faq-accordion-item-active" : ""
+                  }`}
+                >
+                  <div
+                    className="faq-accordion-header"
+                    onClick={() => toggleAccordion(3)}
+                  >
                     <h3 className="faq-accordion-title">
                       Are there any hidden charges?
                     </h3>

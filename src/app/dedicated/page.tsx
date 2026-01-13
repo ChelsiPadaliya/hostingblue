@@ -222,7 +222,7 @@ const DedicatedPageContent = () => {
                                 </span>
                               )
                             )}
-                          </p>
+                        </p>
                       </div>
                       <div className="pricing-item-amount">
                         <p>Starting at</p>

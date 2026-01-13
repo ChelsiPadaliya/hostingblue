@@ -27,7 +27,7 @@ const page = () => {
               </div>
               <div className="col-12 col-md-6 pb-30">
                 <div className="wallet-box">
-                  <hr />
+                  
                   <div className="sub-section-title">
                     <h5 className="text-left">
                       RAIDLAYER WEBHOST PRIVATE LIMITED
@@ -61,7 +61,7 @@ const page = () => {
                   <div className="wallet-image">
                     <img src="assets/images/paytm-logo.png" alt="paytm" />
                   </div>
-                  <hr />
+                  
                   <div className="wallet-content">
                     <p>To pay in your PAYTM app</p>
                     <p>Enter Pay Number : +91 9909005055</p>

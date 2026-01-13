@@ -236,20 +236,40 @@ const EmailPageContent = () => {
                         <p>Starting at</p>
                         <h4 className="pricing-item-amount-number">
                           {(() => {
-                            const monthlyAttr =
+                            const yearlyAttr =
                               plan.sectionData.hostingplan.plantable.find(
                                 (attr) =>
-                                  attr.attribute.toLowerCase() === "monthly"
+                                  attr.attribute.toLowerCase() === "yearly"
                               );
-                            return monthlyAttr ? (
+
+                            if (!yearlyAttr) {
+                              return (
+                                <>
+                                  <small>₹</small>
+                                  <span className="price-number">0</span>
+                                  <small>/Month</small>
+                                </>
+                              );
+                            }
+
+                            // number & string separate
+                            const numberValue = yearlyAttr.value.replace(
+                              /[^\d]/g,
+                              ""
+                            );
+                            const textValue = yearlyAttr.value.replace(
+                              /[\d]/g,
+                              ""
+                            );
+
+                            return (
                               <>
-                                <small>{monthlyAttr.unit}</small>
-                                {monthlyAttr.value}
-                                <span>/Month</span>
-                              </>
-                            ) : (
-                              <>
-                                <small>₹</small>0<span>/Month</span>
+                                <small>{yearlyAttr.unit}</small>
+                                <span className="price-number">
+                                  {numberValue}
+                                </span>
+                                {textValue && <small>{textValue}</small>}
+                                <small>/Year</small>
                               </>
                             );
                           })()}
@@ -263,7 +283,7 @@ const EmailPageContent = () => {
                           {plan.sectionData.hostingplan.plantable
                             .filter(
                               (attr) =>
-                                attr.attribute.toLowerCase() !== "monthly"
+                                attr.attribute.toLowerCase() !== "yearly"
                             )
                             .map((attr, index) => (
                               <li key={index}>

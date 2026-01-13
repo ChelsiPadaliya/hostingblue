@@ -54,8 +54,16 @@ const FAQsPage = () => {
           <div className="row align-items-center">
             <div className="col-sm-12 col-md-12 col-lg-5 pb-30">
               <div className="faq-accordion">
-                <div className={`faq-accordion-item bg-white ${activeIndex === 0 ? 'faq-accordion-item-active' : ''}`}>
-                  <div className="faq-accordion-header" onClick={() => toggleAccordion(0)} style={{ cursor: 'pointer' }}>
+                <div
+                  className={`faq-accordion-item bg-white ${
+                    activeIndex === 0 ? "faq-accordion-item-active" : ""
+                  }`}
+                >
+                  <div
+                    className="faq-accordion-header"
+                    onClick={() => toggleAccordion(0)}
+                    style={{ cursor: "pointer" }}
+                  >
                     <h3 className="faq-accordion-title">
                       What types of hosting do you offer?
                     </h3>
@@ -71,8 +79,16 @@ const FAQsPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`faq-accordion-item bg-white ${activeIndex === 1 ? 'faq-accordion-item-active' : ''}`}>
-                  <div className="faq-accordion-header" onClick={() => toggleAccordion(1)} style={{ cursor: 'pointer' }}>
+                <div
+                  className={`faq-accordion-item bg-white ${
+                    activeIndex === 1 ? "faq-accordion-item-active" : ""
+                  }`}
+                >
+                  <div
+                    className="faq-accordion-header"
+                    onClick={() => toggleAccordion(1)}
+                    style={{ cursor: "pointer" }}
+                  >
                     <h3 className="faq-accordion-title">
                       Can I upgrade my hosting plan later?
                     </h3>
@@ -89,8 +105,16 @@ const FAQsPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`faq-accordion-item bg-white ${activeIndex === 2 ? 'faq-accordion-item-active' : ''}`}>
-                  <div className="faq-accordion-header" onClick={() => toggleAccordion(2)} style={{ cursor: 'pointer' }}>
+                <div
+                  className={`faq-accordion-item bg-white ${
+                    activeIndex === 2 ? "faq-accordion-item-active" : ""
+                  }`}
+                >
+                  <div
+                    className="faq-accordion-header"
+                    onClick={() => toggleAccordion(2)}
+                    style={{ cursor: "pointer" }}
+                  >
                     <h3 className="faq-accordion-title">
                       Do you provide customer support?
                     </h3>
@@ -107,10 +131,18 @@ const FAQsPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className={`faq-accordion-item bg-white ${activeIndex === 3 ? 'faq-accordion-item-active' : ''}`}>
-                  <div className="faq-accordion-header" onClick={() => toggleAccordion(3)} style={{ cursor: 'pointer' }}>
+                <div
+                  className={`faq-accordion-item bg-white ${
+                    activeIndex === 3 ? "faq-accordion-item-active" : ""
+                  }`}
+                >
+                  <div
+                    className="faq-accordion-header"
+                    onClick={() => toggleAccordion(3)}
+                    style={{ cursor: "pointer" }}
+                  >
                     <h3 className="faq-accordion-title">
-                       Are there any hidden charges?
+                      Are there any hidden charges?
                     </h3>
                     <div className="faq-accordion-header-overlay" />
                   </div>
