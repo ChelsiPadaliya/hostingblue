@@ -62,7 +62,10 @@ const CloudPageContent = () => {
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
   const [selectedCategory, setSelectedCategory] = useState("hanarad-cloud");
-  const [selectedTypes, setSelectedTypes] = useState<string[]>(["Hanarad", "Cloud"]);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([
+    "Hanarad",
+    "Cloud",
+  ]);
   const [plans, setPlans] = useState<Plan[]>([]);
   const [features, setFeatures] = useState<Feature[]>([]);
   const [loading, setLoading] = useState(true);
@@ -86,11 +89,11 @@ const CloudPageContent = () => {
 
   // Add error boundary for safe rendering
   const safeRender = (value: any) => {
-    if (typeof value === 'string') return value;
-    if (typeof value === 'object' && value !== null) {
+    if (typeof value === "string") return value;
+    if (typeof value === "object" && value !== null) {
       return JSON.stringify(value);
     }
-    return String(value || '');
+    return String(value || "");
   };
 
   const handleCategoryChange = (categoryValue: string) => {
@@ -220,7 +223,10 @@ const CloudPageContent = () => {
           {filteredPlans.length > 0 ? (
             <div className="row d-flex">
               {filteredPlans.map((plan) => (
-                <div key={plan._id} className="col-sm-12 col-md-6 col-lg-3 d-flex">
+                <div
+                  key={plan._id}
+                  className="col-sm-12 col-md-6 col-lg-3 d-flex"
+                >
                   <div className="pricing-item pricing-item-two w-100 d-flex flex-column">
                     <div className="pricing-secondary-header">
                       <div className="pricing-header-title">
@@ -228,11 +234,16 @@ const CloudPageContent = () => {
                           {safeRender(plan.sectionData.hostingplan.planname)}
                         </h3>
                         <p>
-                          {Array.isArray(plan.sectionData.hostingplan.description)
-                            ? plan.sectionData.hostingplan.description
-                                .map((desc) => desc.description)
-                                .join(', ')
-                            : ''}
+                          {Array.isArray(
+                            plan.sectionData.hostingplan.description
+                          ) &&
+                            plan.sectionData.hostingplan.description.map(
+                              (desc, index) => (
+                                <span key={index} style={{ display: "block" }}>
+                                  • {desc.description}
+                                </span>
+                              )
+                            )}
                         </p>
                       </div>
                       <div className="pricing-item-amount">
@@ -270,7 +281,8 @@ const CloudPageContent = () => {
                             )
                             .map((attr, index) => (
                               <li key={index}>
-                                {safeRender(attr.value)} {safeRender(attr.unit)} {safeRender(attr.attribute)}
+                                {safeRender(attr.value)} {safeRender(attr.unit)}{" "}
+                                {safeRender(attr.attribute)}
                               </li>
                             ))}
                         </ul>
@@ -290,9 +302,8 @@ const CloudPageContent = () => {
             <div className="text-center py-5">
               <p>
                 No data available for{" "}
-                {CLOUD_CATEGORIES.find(
-                  (cat) => cat.value === selectedCategory
-                )?.label || "selected category"}
+                {CLOUD_CATEGORIES.find((cat) => cat.value === selectedCategory)
+                  ?.label || "selected category"}
               </p>
             </div>
           )}
