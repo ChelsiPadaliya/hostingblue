@@ -14,7 +14,7 @@ const AboutPage = () => {
 
   if (loading) {
     return (
-      <section className="about-us-section pb-70">
+      <section className="about-us-section pb-70 -mt-[80px]">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-sm-12 col-lg-6 pb-30">
@@ -44,7 +44,7 @@ const AboutPage = () => {
   return (
     <>
       {/* about-us-section */}
-      <section className="about-us-section pb-70">
+      <section className="about-us-section pb-70 -mt-[80px]">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-sm-12 col-lg-6 pb-30">
@@ -70,12 +70,13 @@ const AboutPage = () => {
                     For Your Website and the Highest Server Uptime Possible
                     Which Translates to a Higher Uptime for Your Website.We
                     Provide 100% Network Uptime Guarantee On All Our Hosting
-                    Packages.Keeping this in View We have Servers in the World&apos;s
-                    Safest and Best Data Centers so that Your Website Stays up
-                    at all Times.As a Web Hosting Company And Service Provider
-                    it is our Commitment to make our Services Affordabale For
-                    Everyone and Therfore Have Kept Our Prices at an All Time
-                    Low So that Our Services are Within Reach Of Everyone.
+                    Packages.Keeping this in View We have Servers in the
+                    World&apos;s Safest and Best Data Centers so that Your
+                    Website Stays up at all Times.As a Web Hosting Company And
+                    Service Provider it is our Commitment to make our Services
+                    Affordabale For Everyone and Therfore Have Kept Our Prices
+                    at an All Time Low So that Our Services are Within Reach Of
+                    Everyone.
                   </p>
                 </div>
               </div>

@@ -41,7 +41,7 @@ const STORAGE_CATEGORIES = [
     label: "Cloud Storage",
     types: ["Linux", "Dedicated"],
   },
-  
+
   {
     value: "object-storage",
     label: "Object Storage",
@@ -53,7 +53,10 @@ const StoragePageContent = () => {
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
   const [selectedCategory, setSelectedCategory] = useState("cloud-storage");
-  const [selectedTypes, setSelectedTypes] = useState<string[]>(["Cloud", "Storage"]);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([
+    "Cloud",
+    "Storage",
+  ]);
   const [plans, setPlans] = useState<Plan[]>([]);
   const [features, setFeatures] = useState<Feature[]>([]);
   const [loading, setLoading] = useState(true);
@@ -209,7 +212,19 @@ const StoragePageContent = () => {
                         <h3 className="pricing-header-title-text">
                           {plan.sectionData.hostingplan.planname}
                         </h3>
-                        <p>{plan.sectionData.hostingplan.description}</p>
+                        <p>
+                          {" "}
+                          {Array.isArray(
+                            plan.sectionData.hostingplan.description
+                          ) &&
+                            plan.sectionData.hostingplan.description.map(
+                              (desc, index) => (
+                                <span key={index} style={{ display: "block" }}>
+                                  • {desc.description}
+                                </span>
+                              )
+                            )}
+                        </p>
                       </div>
                       <div className="pricing-item-amount">
                         <p>Starting at</p>
@@ -254,7 +269,7 @@ const StoragePageContent = () => {
                         <p className="text-center">No features available</p>
                       )}
 
-                      <Link href="/cart" className="btn btn-gradient">
+                      <Link href="#" className="btn btn-gradient">
                         Buy Now
                       </Link>
                     </div>

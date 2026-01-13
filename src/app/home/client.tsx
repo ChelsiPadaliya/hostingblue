@@ -28,9 +28,9 @@ const Client = () => {
                   <div className="about-text">
                     <h3>Dedicated Client-End Support</h3>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam quis
+                      Our dedicated support team is always available to help you
+                      manage, optimize, and grow your hosting environment with
+                      confidence.
                     </p>
                   </div>
 
@@ -42,9 +42,9 @@ const Client = () => {
                       <div className="about-list-content">
                         <h3>Security and faster Server</h3>
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua
+                          Our servers are protected with advanced security
+                          measures and optimized performance to deliver fast
+                          loading speeds and reliable uptime.
                         </p>
                       </div>
                     </li>
@@ -56,9 +56,8 @@ const Client = () => {
                       <div className="about-list-content">
                         <h3>24/7 Online &amp; Offline Support</h3>
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua
+                          Our support team is available 24/7 to assist you
+                          anytime, ensuring reliable help whenever you need it.
                         </p>
                       </div>
                     </li>
@@ -70,9 +69,9 @@ const Client = () => {
                       <div className="about-list-content">
                         <h3>Better Speed With Full Panel</h3>
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua
+                          Manage your server efficiently with a full-featured
+                          control panel designed for speed, stability, and ease
+                          of use.
                         </p>
                       </div>
                     </li>

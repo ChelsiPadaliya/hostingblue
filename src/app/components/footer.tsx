@@ -87,13 +87,13 @@ const Footer = () => {
                             </Link>
                           </li>
                           <li>
-                            <Link href="/hosting?category=cloud">
-                              Cloud Hosting
+                            <Link href="/cloud?category=hanarad-cloud">
+                              Hanarad Cloud VPS Hosting
                             </Link>
                           </li>
                           <li>
-                            <Link href="/hosting?category=dedicated">
-                              Dedicated Hosting
+                            <Link href="/cloud?category=affordable-cloud">
+                              Afforable Cloud VPS Hosting
                             </Link>
                           </li>
                         </ul>
@@ -155,42 +155,46 @@ const Footer = () => {
                     <div className="footer-social-logo">
                       <ul className="footer-social-list">
                         <li className="social-btn social-btn-fb">
-                          <a href="https://www.facebook.com/hostingblues">
+                          <Link
+                            href="https://www.facebook.com/hostingblues"
+                            target="_blank"
+                          >
                             <i className="bx bxl-facebook" />
-                          </a>
+                          </Link>
                         </li>
                         <li className="social-btn social-btn-tw">
-                          <a href="https://twitter.com/hostingBLUES?lang=en">
+                          <Link
+                            href="https://twitter.com/hostingBLUES?lang=en"
+                            target="_blank"
+                          >
                             <i className="bx bxl-twitter" />
-                          </a>
+                          </Link>
                         </li>
                         <li className="social-btn social-btn-google">
-                          <a
+                          <Link
                             href="https://plus.google.com/u/2/112451586543808220624"
                             target="_blank"
-                            rel="noopener noreferrer"
                           >
                             <i className="bx bxl-google-plus" />
-                          </a>
+                          </Link>
                         </li>
 
                         <li className="social-btn social-btn-lin">
-                          <a
+                          <Link
                             href="https://in.linkedin.com/in/hostingblue"
                             target="_blank"
-                            rel="noopener noreferrer"
                           >
                             <i className="bx bxl-linkedin" />
-                          </a>
+                          </Link>
                         </li>
                         <li className="social-btn social-btn-whatsapp">
-                          <a
+                          <Link
                             href="https://wa.me/917600018145"
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="whatsapp"
                           >
                             <i className="bx bxl-whatsapp" />
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -202,7 +206,8 @@ const Footer = () => {
                   {/* info */}
                   <div className="footer-lower-text text-lg-end">
                     <p className="footer-text-copy">
-                      © Copyright 2013 - HostingBLUE India - Inc All Rights Reserved
+                      © Copyright 2013 - HostingBLUE India - Inc All Rights
+                      Reserved
                     </p>
                     <p className="footer-text-gen">
                       Terms &amp; Conditions May Apply.{" "}

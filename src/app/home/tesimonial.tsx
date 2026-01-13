@@ -41,35 +41,35 @@ const Testimonial = () => {
       name: "Alexa Jesmin",
       designation: "Marketing Manager",
       message:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eos qui velit, sed quia non numquam eius modi tempora cidunt lboredolore magnam luptatem.",
+        "The hosting service has been reliable and fast, helping our campaigns run smoothly without downtime. The support team is responsive, knowledgeable, and always ready to assist whenever we need help.",
     },
     {
       id: 2,
       name: "Devit m. kotlin",
       designation: "CEO & Founder",
       message:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eos qui velit, sed quia non numquam eius modi tempora cidunt lboredolore magnam luptatem.",
+        "This hosting platform has exceeded our expectations with its performance, security, and scalability. It has allowed our business to grow confidently while maintaining stability and excellent uptime.",
     },
     {
       id: 3,
       name: "John Doe",
       designation: "CTO",
       message:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eos qui velit, sed quia non numquam eius modi tempora cidunt lboredolore magnam luptatem.",
+        "The infrastructure delivers excellent speed, security, and scalability. From deployment to daily operations, everything runs smoothly, making it a reliable choice for managing critical applications.",
     },
     {
       id: 4,
       name: "Robert Alberto",
       designation: "Senior Developer",
       message:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eos qui velit, sed quia non numquam eius modi tempora cidunt lboredolore magnam luptatem.",
+        "The hosting environment is fast, stable, and easy to work with. Deployment is smooth, server controls are intuitive, and performance remains consistent even under heavy workloads.",
     },
     {
       id: 5,
       name: "Mike devid",
       designation: "HR",
       message:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eos qui velit, sed quia non numquam eius modi tempora cidunt lboredolore magnam luptatem.",
+        "The service has been dependable and easy to coordinate with. Clear communication, quick support responses, and reliable performance make it a trusted solution for our organization.",
     },
   ];
 

@@ -290,7 +290,7 @@ const CloudPageContent = () => {
                         <p className="text-center">No features available</p>
                       )}
 
-                      <Link href="/cart" className="btn btn-gradient mt-auto">
+                      <Link href="#" className="btn btn-gradient mt-auto">
                         Buy Now
                       </Link>
                     </div>

@@ -150,11 +150,10 @@ const EmailPageContent = () => {
   );
 
   const filteredFeatures = features.filter((feature) =>
-  selectedTypes.every((type) =>
-    feature.sectionData.emailfeature.tags.includes(type)
-  )
-);
-
+    selectedTypes.every((type) =>
+      feature.sectionData.emailfeature.tags.includes(type)
+    )
+  );
 
   if (loading) {
     return (
@@ -219,7 +218,19 @@ const EmailPageContent = () => {
                         <h3 className="pricing-header-title-text">
                           {plan.sectionData.hostingplan.planname}
                         </h3>
-                        <p>{plan.sectionData.hostingplan.description}</p>
+                        <p>
+                          {" "}
+                          {Array.isArray(
+                            plan.sectionData.hostingplan.description
+                          ) &&
+                            plan.sectionData.hostingplan.description.map(
+                              (desc, index) => (
+                                <span key={index} style={{ display: "block" }}>
+                                  • {desc.description}
+                                </span>
+                              )
+                            )}
+                        </p>
                       </div>
                       <div className="pricing-item-amount">
                         <p>Starting at</p>
@@ -264,7 +275,7 @@ const EmailPageContent = () => {
                         <p className="text-center">No features available</p>
                       )}
 
-                      <Link href="/cart" className="btn btn-gradient">
+                      <Link href="#" className="btn btn-gradient">
                         Buy Now
                       </Link>
                     </div>
@@ -276,9 +287,8 @@ const EmailPageContent = () => {
             <div className="text-center py-5">
               <p>
                 No data available for{" "}
-                {EMAIL_CATEGORIES.find(
-                  (cat) => cat.value === selectedCategory
-                )?.label || "selected category"}
+                {EMAIL_CATEGORIES.find((cat) => cat.value === selectedCategory)
+                  ?.label || "selected category"}
               </p>
             </div>
           )}

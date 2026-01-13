@@ -55,32 +55,6 @@ const Page = () => {
             </div>
           </div>
         </section>
-        <div className="comment-section pt-100 pb-70 blue-gradient-with-opacity">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-sm-12 col-lg-4 pb-30">
-                <div className="h-64 bg-gray-200 rounded animate-pulse"></div>
-              </div>
-              <div className="col-sm-12 col-lg-8 pb-30">
-                <div className="comment-area bg-white">
-                  <div className="h-6 bg-gray-200 rounded w-48 mb-4 animate-pulse"></div>
-                  <div className="h-4 bg-gray-200 rounded w-full mb-6 animate-pulse"></div>
-                  <div className="row">
-                    {[...Array(6)].map((_, i) => (
-                      <div key={i} className="col-sm-12 col-md-6 col-lg-6">
-                        <div className="h-12 bg-gray-200 rounded mb-4 animate-pulse"></div>
-                      </div>
-                    ))}
-                    <div className="col-sm-12">
-                      <div className="h-24 bg-gray-200 rounded mb-4 animate-pulse"></div>
-                      <div className="h-10 bg-gray-200 rounded w-32 animate-pulse"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </>
     );
   }
@@ -185,7 +159,7 @@ const Page = () => {
       {/* end contact-us-section */}
 
       {/* comment-section */}
-      <div className="comment-section pt-100 pb-70 blue-gradient-with-opacity">
+      {/* <div className="comment-section pt-100 pb-70 blue-gradient-with-opacity">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-sm-12 col-lg-4 pb-30">
@@ -355,7 +329,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* .end comment-section */}
 
       {/* map-section */}

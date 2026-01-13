@@ -50,7 +50,10 @@ const DEDICATED_CATEGORIES = [
 const DedicatedPageContent = () => {
   const searchParams = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("linux-dedicated");
-  const [selectedTypes, setSelectedTypes] = useState<string[]>(["Linux", "Dedicated"]);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([
+    "Linux",
+    "Dedicated",
+  ]);
   const [plans, setPlans] = useState<Plan[]>([]);
   const [features, setFeatures] = useState<Feature[]>([]);
   const [loading, setLoading] = useState(true);
@@ -186,13 +189,14 @@ const DedicatedPageContent = () => {
         <div className="container">
           <div className="section-title section-title-two">
             <h2>
-              {DEDICATED_CATEGORIES.find((cat) => cat.value === selectedCategory)
-                ?.label || "Dedicated Server"}{" "}
+              {DEDICATED_CATEGORIES.find(
+                (cat) => cat.value === selectedCategory
+              )?.label || "Dedicated Server"}{" "}
               Plans
             </h2>
             <p>
-              Choose the perfect dedicated server plan for your needs with powerful
-              resources and reliable performance.
+              Choose the perfect dedicated server plan for your needs with
+              powerful resources and reliable performance.
             </p>
           </div>
 
@@ -206,7 +210,19 @@ const DedicatedPageContent = () => {
                         <h3 className="pricing-header-title-text">
                           {plan.sectionData.hostingplan.planname}
                         </h3>
-                        <p>{plan.sectionData.hostingplan.description}</p>
+                        <p>
+                          {" "}
+                          {Array.isArray(
+                            plan.sectionData.hostingplan.description
+                          ) &&
+                            plan.sectionData.hostingplan.description.map(
+                              (desc, index) => (
+                                <span key={index} style={{ display: "block" }}>
+                                  • {desc.description}
+                                </span>
+                              )
+                            )}
+                          </p>
                       </div>
                       <div className="pricing-item-amount">
                         <p>Starting at</p>
@@ -251,7 +267,7 @@ const DedicatedPageContent = () => {
                         <p className="text-center">No features available</p>
                       )}
 
-                      <a href="/cart" className="btn btn-gradient">
+                      <a href="#" className="btn btn-gradient">
                         Buy Now
                       </a>
                     </div>
@@ -279,7 +295,8 @@ const DedicatedPageContent = () => {
               <small>Features</small>
               <h2>Dedicated Server Features</h2>
               <p>
-                Discover the powerful features included with your dedicated server plan
+                Discover the powerful features included with your dedicated
+                server plan
               </p>
             </div>
 
@@ -325,7 +342,8 @@ const DedicatedPageContent = () => {
               <small>Features</small>
               <h2>Dedicated Server Features</h2>
               <p>
-                Discover the powerful features included with your dedicated server plan
+                Discover the powerful features included with your dedicated
+                server plan
               </p>
             </div>
             <div className="text-center">

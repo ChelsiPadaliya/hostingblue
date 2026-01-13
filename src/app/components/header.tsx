@@ -23,7 +23,13 @@ const Header = () => {
                   <i className="flaticon-chat" />
                 </div>
                 <div className="topbar-list-content">
-                  <Link href="#">Chat With A Consultant</Link>
+                  <Link
+                    href="https://wa.me/917600018145"
+                    target="_blank"
+                    rel="chat with a consultant"
+                  >
+                    Chat With A Consultant
+                  </Link>
                 </div>
               </div>
               <div className="topbar-item-list">
@@ -41,7 +47,7 @@ const Header = () => {
                   <i className="flaticon-chat" />
                 </div>
                 <div className="topbar-list-content">
-                  <Link href="mailto:info@blim.com">live@hostingblue.in</Link>
+                  <Link href="mailto:live@hostingblue.in">live@hostingblue.in</Link>
                 </div>
               </div>
             </div>
@@ -255,12 +261,10 @@ const Header = () => {
                         </Link>
                       </li>
                       <li className="nav-item">
-                         <Link
+                        <Link
                           href="#"
                           className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/hosting")
-                              ? "active"
-                              : ""
+                            pathname?.startsWith("/hosting") ? "active" : ""
                           }`}
                         >
                           Hosting
@@ -312,9 +316,7 @@ const Header = () => {
                         <Link
                           href="#"
                           className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/cloud")
-                              ? "active"
-                              : ""
+                            pathname?.startsWith("/cloud") ? "active" : ""
                           }`}
                         >
                           Cloud
@@ -331,7 +333,7 @@ const Header = () => {
                             </Link>
                           </li>
                           <li className="nav-item">
-                             <Link
+                            <Link
                               href="/cloud?category=affordable-cloud"
                               className={`nav-link ${
                                 isActive("/afforable-cloud") ? "active" : ""
@@ -362,49 +364,43 @@ const Header = () => {
                           </li>
                         </ul>
                       </li>
-                         <li className="nav-item">
-                            <Link
-                          href="#"
-                          className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/dedicated")
-                              ? "active"
-                              : ""
-                          }`}
-                        >
-                              Dedicated Server
-                            </Link>
-                            <ul className="dropdown-menu">
-                              <li className="nav-item">
-                                <Link
-                                  href="/dedicated?category=linux-dedicated"
-                                  className={`nav-link ${
-                                    isActive("/linux-dedicated")
-                                      ? "active"
-                                      : ""
-                                  }`}
-                                >
-                                  Linux Dedicated server
-                                </Link>
-                              </li>
-                              <li className="nav-item">
-                                <Link
-                                  href="/dedicated?category=windows-dedicated"
-                                  className={`nav-link ${
-                                    isActive("/windows-dedicated") ? "active" : ""
-                                  }`}
-                                >
-                                  Windows Dedicated Server
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>
                       <li className="nav-item">
                         <Link
                           href="#"
                           className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/email")
-                              ? "active"
-                              : ""
+                            pathname?.startsWith("/dedicated") ? "active" : ""
+                          }`}
+                        >
+                          Dedicated Server
+                        </Link>
+                        <ul className="dropdown-menu">
+                          <li className="nav-item">
+                            <Link
+                              href="/dedicated?category=linux-dedicated"
+                              className={`nav-link ${
+                                isActive("/linux-dedicated") ? "active" : ""
+                              }`}
+                            >
+                              Linux Dedicated server
+                            </Link>
+                          </li>
+                          <li className="nav-item">
+                            <Link
+                              href="/dedicated?category=windows-dedicated"
+                              className={`nav-link ${
+                                isActive("/windows-dedicated") ? "active" : ""
+                              }`}
+                            >
+                              Windows Dedicated Server
+                            </Link>
+                          </li>
+                        </ul>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          href="#"
+                          className={`nav-link dropdown-toggle ${
+                            pathname?.startsWith("/email") ? "active" : ""
                           }`}
                         >
                           Email Hosting
@@ -434,7 +430,9 @@ const Header = () => {
                             <Link
                               href="/email?category=microsoft-office-365"
                               className={`nav-link ${
-                                isActive("/microsoft-office-365") ? "active" : ""
+                                isActive("/microsoft-office-365")
+                                  ? "active"
+                                  : ""
                               }`}
                             >
                               Microsoft Office 365
@@ -450,53 +448,43 @@ const Header = () => {
                               Zoho Email
                             </Link>
                           </li>
-
-                         
                         </ul>
-                        
                       </li>
-                       <li className="nav-item">
-                             <Link
-                          href="#"
-                          className={`nav-link dropdown-toggle ${
-                            pathname?.startsWith("/storage")
-                              ? "active"
-                              : ""
-                          }`}
-                        >
-                              Storage
-                            </Link>
-                            <ul className="dropdown-menu">
-                              <li className="nav-item">
-                                <Link
-                                  href="/storage?category=cloud-storage"
-                                  className={`nav-link ${
-                                    isActive("/cloud-storage")
-                                      ? "active"
-                                      : ""
-                                  }`}
-                                >
-                                  Cloud Storage
-                                </Link>
-                              </li>
-                              <li className="nav-item">
-                                <Link
-                                  href="/storage?category=object-storage"
-                                  className={`nav-link ${
-                                    isActive("/object-storage") ? "active" : ""
-                                  }`}
-                                >
-                                  Object Storage
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>
-
-                       <li className="nav-item">
+                      <li className="nav-item">
                         <Link
                           href="#"
-                          className={`nav-link dropdown-toggle`}
+                          className={`nav-link dropdown-toggle ${
+                            pathname?.startsWith("/storage") ? "active" : ""
+                          }`}
                         >
+                          Storage
+                        </Link>
+                        <ul className="dropdown-menu">
+                          <li className="nav-item">
+                            <Link
+                              href="/storage?category=cloud-storage"
+                              className={`nav-link ${
+                                isActive("/cloud-storage") ? "active" : ""
+                              }`}
+                            >
+                              Cloud Storage
+                            </Link>
+                          </li>
+                          <li className="nav-item">
+                            <Link
+                              href="/storage?category=object-storage"
+                              className={`nav-link ${
+                                isActive("/object-storage") ? "active" : ""
+                              }`}
+                            >
+                              Object Storage
+                            </Link>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li className="nav-item">
+                        <Link href="#" className={`nav-link dropdown-toggle`}>
                           Pages
                         </Link>
                         <ul className="dropdown-menu">
@@ -550,7 +538,7 @@ const Header = () => {
                               Contact
                             </Link>
                           </li>
-                           <li className="nav-item">
+                          <li className="nav-item">
                             <Link
                               href="/faqs"
                               className={`nav-link ${
@@ -562,7 +550,6 @@ const Header = () => {
                           </li>
                         </ul>
                       </li>
-
                     </ul>
                   </div>
                   {/* navbar-option */}
