@@ -247,7 +247,7 @@ const EmailPageContent = () => {
                                 <>
                                   <small>₹</small>
                                   <span className="price-number">0</span>
-                                  <small>/Month</small>
+                                  <small>/Year</small>
                                 </>
                               );
                             }
