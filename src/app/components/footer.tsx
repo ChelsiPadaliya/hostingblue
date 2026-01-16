@@ -62,7 +62,8 @@ const Footer = () => {
                       </Link>
                     </p>
                     <p>
-                      Phone: <Link href="tel:+919909005055">+91 99090 05055</Link>
+                      Phone:{" "}
+                      <Link href="tel:+919909005055">+91 99090 05055</Link>
                     </p>
                   </div>
                 </div>
@@ -216,10 +217,6 @@ const Footer = () => {
                       </Link>
                     </p>
                   </div>
-                  {/* refer button
-                  <div className="footer-lower-button">
-                    <button className="btn btn-pill">Refer A Friend</button>
-                  </div> */}
                 </div>
               </div>
             </div>
