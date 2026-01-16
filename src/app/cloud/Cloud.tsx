@@ -69,7 +69,7 @@ const CloudPageContent = () => {
   const [plans, setPlans] = useState<Plan[]>([]);
   const [features, setFeatures] = useState<Feature[]>([]);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -250,20 +250,40 @@ const CloudPageContent = () => {
                         <p>Starting at</p>
                         <h4 className="pricing-item-amount-number">
                           {(() => {
-                            const monthlyAttr =
+                            const yearlyAttr =
                               plan.sectionData.hostingplan.plantable.find(
                                 (attr) =>
-                                  attr.attribute.toLowerCase() === "monthly"
+                                  attr.attribute.toLowerCase() === "yearly"
                               );
-                            return monthlyAttr ? (
+
+                            if (!yearlyAttr) {
+                              return (
+                                <>
+                                  <small>₹</small>
+                                  <span className="price-number">0</span>
+                                  <small>/Year</small>
+                                </>
+                              );
+                            }
+
+                            // number & string separate
+                            const numberValue = yearlyAttr.value.replace(
+                              /[^\d]/g,
+                              ""
+                            );
+                            const textValue = yearlyAttr.value.replace(
+                              /[\d]/g,
+                              ""
+                            );
+
+                            return (
                               <>
-                                <small>{safeRender(monthlyAttr.unit)}</small>
-                                {safeRender(monthlyAttr.value)}
-                                <span>/Month</span>
-                              </>
-                            ) : (
-                              <>
-                                <small>₹</small>0<span>/Month</span>
+                                <small>{yearlyAttr.unit}</small>
+                                <span className="price-number">
+                                  {numberValue}
+                                </span>
+                                {textValue && <small>{textValue}</small>}
+                                <small>/Year</small>
                               </>
                             );
                           })()}
@@ -277,7 +297,7 @@ const CloudPageContent = () => {
                           {plan.sectionData.hostingplan.plantable
                             .filter(
                               (attr) =>
-                                attr.attribute.toLowerCase() !== "monthly"
+                                attr.attribute.toLowerCase() !== "yearly"
                             )
                             .map((attr, index) => (
                               <li key={index}>
