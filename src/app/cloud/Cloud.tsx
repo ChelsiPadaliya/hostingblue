@@ -40,21 +40,25 @@ const CLOUD_CATEGORIES = [
     value: "hanarad-cloud",
     label: "Hanarad Cloud VPS Hosting",
     types: ["Hanarad", "Cloud"],
+    tags: ["Hanarad", "Cloud"]
   },
   {
     value: "affordable-cloud",
     label: "Affordable Cloud VPS Hosting",
     types: ["Affordable", "Cloud"],
+    tags: ["Affordable", "Cloud"]
   },
   {
     value: "premium",
     label: "Premium",
     types: ["Premium"],
+    tags: ["Premium"]
   },
   {
     value: "dedicated",
     label: "Dedicated",
     types: ["Dedicated"],
+    tags: ["Dedicated"]
   },
 ];
 
@@ -124,7 +128,8 @@ const CloudPageContent = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
+      // Fetch hosting plans
+      const plansResponse = await fetch(
         "https://neapi.hanaplatform.com/api/dynamic/getdata/public",
         {
           method: "POST",
@@ -145,9 +150,33 @@ const CloudPageContent = () => {
         }
       );
 
-      const data = await response.json();
-      setPlans(data.data || []);
-      setFeatures([]);
+      // Fetch hosting features
+      const featuresResponse = await fetch(
+        "https://neapi.hanaplatform.com/api/dynamic/getdata/public",
+        {
+          method: "POST",
+          headers: {
+            "x-api-key": "dhtr348768uhjkh544fg",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            appName: "app6121010948209",
+            moduleName: "hostingfeature",
+            query: {},
+            projection: {},
+            limit: 0,
+            skip: 0,
+            order: "descending",
+            sortBy: "_id",
+          }),
+        }
+      );
+
+      const plansData = await plansResponse.json();
+      const featuresData = await featuresResponse.json();
+      
+      setPlans(plansData.data || []);
+      setFeatures(featuresData.data || []);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
@@ -161,11 +190,13 @@ const CloudPageContent = () => {
     )
   );
 
-  const filteredFeatures = features.filter((feature) =>
-    selectedTypes.every((type) =>
-      feature.sectionData.hostingfeature.tags.includes(type)
-    )
-  );
+  const filteredFeatures = features.filter((feature) => {
+    const featureTags = feature.sectionData.hostingfeature.tags || [];
+    // Show features that have ALL selected types in their tags (case-insensitive)
+    return selectedTypes.every((type) => 
+      featureTags.some(tag => tag.toLowerCase() === type.toLowerCase())
+    );
+  });
 
   if (loading) {
     return (
