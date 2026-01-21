@@ -45,53 +45,73 @@ const LogoSection = () => {
             className="logo-slider owl-carousel owl-theme"
             {...carouselOptions}
           >
-            <div className="item">
+            <div className="item" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px' }}>
               <Image
-                src="/assets/images/logo-1.png"
+                src="/assets/images/ubuntu.png"
                 alt="logo"
                 width={120}
                 height={60}
-                className="img-fluid"
+                style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
                 unoptimized
               />
             </div>
-            <div className="item">
+            <div className="item" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px' }}>
               <Image
-                src="/assets/images/logo-2.png"
+                src="/assets/images/fedora1.png"
                 alt="logo"
                 width={120}
                 height={60}
-                className="img-fluid"
+                style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
                 unoptimized
               />
             </div>
-            <div className="item">
+            <div className="item" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px' }}>
               <Image
-                src="/assets/images/logo-3.png"
+                src="/assets/images/debian.png"
                 alt="logo"
                 width={120}
                 height={60}
-                className="img-fluid"
+                style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
                 unoptimized
               />
             </div>
-            <div className="item">
+            <div className="item" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px' }}>
               <Image
-                src="/assets/images/logo-4.png"
+                src="/assets/images/centos.png"
                 alt="logo"
                 width={120}
                 height={60}
-                className="img-fluid"
+                style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
                 unoptimized
               />
             </div>
-            <div className="item">
+            <div className="item" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px' }}>
               <Image
-                src="/assets/images/logo-5.png"
+                src="/assets/images/rocky_linux.png"
                 alt="logo"
                 width={120}
                 height={60}
-                className="img-fluid"
+                style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
+                unoptimized
+              />
+            </div>
+            <div className="item" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px' }}>
+              <Image
+                src="/assets/images/almalinux.png"
+                alt="logo"
+                width={120}
+                height={60}
+                style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
+                unoptimized
+              />
+            </div>
+            <div className="item" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px' }}>
+              <Image
+                src="/assets/images/windows1.png"
+                alt="logo"
+                width={120}
+                height={60}
+                style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
                 unoptimized
               />
             </div>

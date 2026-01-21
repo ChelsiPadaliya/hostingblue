@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "premium hosting",
     "premium",
     "dedicated hosting",
-    "dedocated",
+    "dedicated",
   ],
 };
 
